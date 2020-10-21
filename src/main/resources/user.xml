@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userns">
+	<resultMap type="user" id="userResult">
+		<result property="user_id" column="user_id" />
+		<result property="user_nickname" column="user_nickname" />
+		<result property="user_age" column="user_age" />
+		<result property="user_email" column="user_email" />
+		<result property="user_ip" column="user_ip" />
+		<result property="user_level" column="user_level" />
+		<result property="user_del" column="user_del" />
+		<result property="user_regdate" column="user_regdate" />
+		<result property="user_update" column="user_update" />
+		<result property="user_pwd" column="user_pwd" />
+	</resultMap>
+
+	<!-- myBatis에서 객체명은 소문자로 한다. -->
+	<!-- 받아온 #{user_id}값으로 검색을 하고 있으면 select 하란 뜻!!! -->
+	<select id="select" parameterType="string" resultType="user">
+		select *
+		from user_info where user_id = #{user_id}
+	</select>
+
+	<select id="select1" parameterType="string" resultType="user">
+		select *
+		from user_info where user_nickname = #{user_nickname}
+	</select>
+
+	<!-- insert, modify, delete를 하면 성공한 갯수가 나온다. 그래서 returnType이 필요없음 -->
+	<insert id="insert" parameterType="user">
+		insert into user_info
+		values(#{user_id},#{user_nickname},#{user_name},#{user_age},
+		#{user_email},#{user_ip},1,'n',sysdate,sysdate,#{user_pwd})
+	</insert>
+</mapper>
