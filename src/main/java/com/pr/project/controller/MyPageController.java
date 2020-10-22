@@ -34,46 +34,52 @@ public class MyPageController {
 	
 	
 	@RequestMapping("home_yj")
-	public String home_yj( String user_id, String user_nickname, String user_regdate, Model model,HttpSession session) throws IOException {
+	public String home_yj( Model model,HttpSession session) throws IOException {
 		
-		user_id = "pyj078";
-		user_nickname="유댕ㅎㅎ";
-		user_regdate = "2020.10.16."; //Date 로 바꿔줘야함 (위에도)
+		//user_id = "pyj078";
+		//user_nickname="유댕ㅎㅎ";
+		//user_regdate = "2020.10.16."; //Date 로 바꿔줘야함 (위에도)
 		
-		model.addAttribute("user_id", user_id);
-		model.addAttribute("user_nickname", user_nickname);
-		model.addAttribute("user_regdate",user_regdate);
+		//model.addAttribute("user_id", user_id);
+		//model.addAttribute("user_nickname", user_nickname);
+		//model.addAttribute("user_regdate",user_regdate);
 		
 		Object profile = session.getAttribute("profile");
+		//String user_nickname = (String) session.getAttribute("user_nickname");
+		//String user_regdate = (String)session.getAttribute("user_regdate");
 		
 		model.addAttribute("profile", profile);
+		//model.addAttribute("user_nickname", user_nickname);
+		//model.addAttribute("user_regdate", user_regdate);
 		
-		System.out.print("메인화면의 : " + profile);
+		System.out.println("메인화면의 : " + profile);
+		//System.out.println("session user_nickname" + user_nickname);
+		//System.out.println("session user_regdate" + user_regdate);
 		
-		return "home_yj";
+		return "main";
 	}
 	
 	@RequestMapping("myPageTab/memberLevelInfo")
-	public String memberLevelInfo(String user_id, String user_nickname, String user_regdate, Model model) {
+	public String memberLevelInfo( Model model) {
 		
-		user_id = "pyj078";
-		user_nickname="유댕ㅎㅎ";
-		user_regdate = "2020.10.16."; //Date 로 바꿔줘야함 (위에도)
-		
-		model.addAttribute("user_id", user_id);
-		model.addAttribute("user_nickname", user_nickname);
-		model.addAttribute("user_regdate",user_regdate);
+		/*
+		 * user_id = "pyj078"; user_nickname="유댕ㅎㅎ"; user_regdate = "2020.10.16.";
+		 * //Date 로 바꿔줘야함 (위에도)
+		 * 
+		 * model.addAttribute("user_id", user_id); model.addAttribute("user_nickname",
+		 * user_nickname); model.addAttribute("user_regdate",user_regdate);
+		 */
 		
 		
 		return "myPageTab/memberLevelInfo";
 	}
 	
 	@RequestMapping("myPageTab/sendmessagePopup")
-	public String sendmessagePopup(String user_id, Model model) {
+	public String sendmessagePopup( Model model) {
 		
-		user_id = "pyj078";
+		//user_id = "pyj078";
 		
-		model.addAttribute("user_id", user_id);
+		//model.addAttribute("user_id", user_id);
 		
 		
 		
@@ -92,22 +98,24 @@ public class MyPageController {
 	}
 	
 	@RequestMapping("myPageTab/userInfoUpdateForm")
-	public String userInfoUpdateForm(String user_nickname, Model model, HttpServletRequest req)throws Exception {
+	public String userInfoUpdateForm( Model model, HttpServletRequest req, HttpSession session)throws Exception {
 		
 		//User user = us.selectN(user_nickname);
 		//model.addAttribute("user", user);
 		
-		user_nickname="유댕ㅎㅎ";
-		model.addAttribute("user_nickname", user_nickname);
+		//user_nickname="유댕ㅎㅎ";
+		//model.addAttribute("user_nickname", user_nickname);
 		
-		
+		String user_id = (String)session.getAttribute("user_id");
+		model.addAttribute("user_id", user_id);
 		
 		return "myPageTab/userInfoUpdateForm";
 	}
 	
 	@RequestMapping("myPageTab/updateSuccess")
 	public String updateSuccess(User user, Model model, @RequestParam("inlineRadioOptions") String profile, HttpServletRequest req, HttpSession session) throws IOException{
-		
+		String user_id = (String)session.getAttribute("user_id");
+		user.setUser_id(user_id);
 		int result = us.updateN(user);
 		
 		model.addAttribute("result", result);
@@ -116,8 +124,13 @@ public class MyPageController {
 		
 		//req.setAttribute("profile", profile);
 		session.setAttribute("profile", profile);
+	
 		
 		System.out.print(profile);
+		System.out.println(user.getUser_nickname() ); // 바꾼걸로 나옴
+		
+		session.setAttribute("user_nickname", user.getUser_nickname());
+		
 		return "myPageTab/updateSuccess";
 	}
 	

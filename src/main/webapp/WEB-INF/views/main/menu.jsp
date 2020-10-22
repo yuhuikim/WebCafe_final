@@ -115,8 +115,8 @@ $(function(){
 	<div id="myacti_span" style="height:210px;display:none;padding-top:7px;padding-bottom:7px">
 		
 						
-		<u:mypagetag> </u:mypagetag>
-		
+		<%-- <u:mypagetag> </u:mypagetag> --%>
+		<jsp:include page="../myPageTab/mypage.jsp"></jsp:include>
 		
 		
 	</div>

@@ -41,7 +41,7 @@ function checking(){
 		<table style="background-color:#EAEAEA;" align="center">
 		<tr style="padding-left:10px"> 
 			<td style="padding-left:30px;padding-right:30px;padding-top:10px;font-size:13px;font-weight:bolder"> 별명 </td>
-			<td style="padding-top:10px;padding-right:30px"> <input type="text"  name="user_nickname" placeholder="닉네임" >  
+			<td style="padding-top:10px;padding-right:30px"> <input type="text"  name="user_nickname" value="${user_nickname }" >  
 			<a id="nickChk" href="#" role="button"  onclick="checking()" ><img src="https://ssl.pstatic.net/static/cafe/myinfo/btn_confirm.gif" alt="중복확인"></a>	
 			</td>
 			

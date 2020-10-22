@@ -41,7 +41,7 @@
 	</select>
 	
 	<update id="updateN" parameterType="string">
-		update user_info set user_nickname = #{user_nickname} where user_id = 'pyj078'
+		update user_info set user_nickname = #{user_nickname} where user_id = #{user_id}
 	</update>
 	
 </mapper>
