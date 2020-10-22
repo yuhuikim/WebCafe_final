@@ -20,10 +20,8 @@
 
 
 	<insert id="insert" parameterType="message">
-		<!-- insert into message values
-		(AA.nextval, 'pyj078', '유댕ㅎㅎ', '0:0:0:0', 'n', #{m_receiver_id}, '테스트용','n', '제목없음', #{m_content}, sysdate) -->
-		
-		insert into message values(AA.nextval, 'pyj078', '유댕ㅎㅎ', '0:0:0:0','n', #{m_receiver_id}, 
+				
+		insert into message values(AA.nextval, #{m_sender_id}, #{m_sender_nick}, '0:0:0:0','n', #{m_receiver_id}, 
 		(select user_nickname from user_info
 			where user_id = #{m_receiver_id}),'n', '제목없음', #{m_content}, sysdate)
 	</insert>

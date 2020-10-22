@@ -75,19 +75,40 @@ public class MyPageController {
 	}
 	
 	@RequestMapping("myPageTab/sendmessagePopup")
-	public String sendmessagePopup( Model model) {
+	public String sendmessagePopup( String m_receiver_id, Model model, Message message, HttpSession session) {
 		
 		//user_id = "pyj078";
 		
 		//model.addAttribute("user_id", user_id);
+		String user_id = (String)session.getAttribute("user_id");
+		//user.setUser_id(user_id);
+		message.setM_sender_id(user_id);
+		System.out.println("m_sender_id" + message.getM_sender_id());
 		
 		
+		String user_nickname= (String)session.getAttribute("user_nickname");
+		message.setM_sender_nick(user_nickname);
+		System.out.println("m_sender_nick" + message.getM_sender_nick());
+		
+		//user.setUser_nickname(user_nickname);
+		//message.setM_receiver_id(m_receiver_id);
 		
 		return "myPageTab/sendmessagePopup";
 	}
 	
 	@RequestMapping("myPageTab/msgSuccess")
 	public String msgSuccess(Message message, Model model, HttpSession session) throws IOException{
+		
+		
+		String user_id = (String)session.getAttribute("user_id");
+		message.setM_sender_id(user_id);
+		System.out.println("m_sender_id" + message.getM_sender_id());
+		
+		
+		String user_nickname= (String)session.getAttribute("user_nickname");
+		message.setM_sender_nick(user_nickname);
+		System.out.println("m_sender_nick" + message.getM_sender_nick());
+		
 		
 		int result = 0;
 		result = msgs.insert(message);
@@ -116,6 +137,7 @@ public class MyPageController {
 	public String updateSuccess(User user, Model model, @RequestParam("inlineRadioOptions") String profile, HttpServletRequest req, HttpSession session) throws IOException{
 		String user_id = (String)session.getAttribute("user_id");
 		user.setUser_id(user_id);
+		
 		int result = us.updateN(user);
 		
 		model.addAttribute("result", result);
