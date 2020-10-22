@@ -14,7 +14,7 @@
 	//location.href="board/tabtest3";
 	
 	//location.href="home.html"
-	location.href="main.html"
+	location.href="/main.html"
 	//location.href="replyList.html?r_b_num=100";
 	//update
 </script>

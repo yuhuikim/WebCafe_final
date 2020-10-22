@@ -38,7 +38,7 @@ public class UserController {
 			msg = "사용 가능한 ID 입니다.";
 		else
 			msg = "사용 중인 ID 입니다.";
-		//model.addAttribute("message", msg);
+		// model.addAttribute("message", msg);
 		return msg;
 	}
 
@@ -93,87 +93,18 @@ public class UserController {
 			loginip.setI_ip(request.getLocalAddr()); // ip setting
 			ls.insert_ip(loginip);
 			session.setAttribute("user_id", user.getUser_id()); // 로그인 상태 유지
+			String a = (String) session.getAttribute("user_id");
+			System.out.println("login: session user id : "+a);
 		}
 		model.addAttribute("result", result);
 		return "user/login";
 	}
 
-	/*
-	 * @RequestMapping("user/main") public String main(Model model,
-	 * HttpServletRequest request, HttpSession session) {
-	 * 
-	 * return "user/main"; }
-	 */
-
-
-//	@RequestMapping("/main")
-//	public String main(Model model, HttpSession session) {
-//		String id = (String) session.getAttribute("id");
-//		User user = null;
-//		if (id != null && !id.equals("")) {
-//			user = us.select(id);
-//		}
-//		model.addAttribute("member", user);
-//		return "main";
-//	}
-//
-//	@RequestMapping("view")
-//	public String view(Model model, HttpSession session) {
-//		String id = (String) session.getAttribute("id");
-//		User user = us.select(id);
-//		model.addAttribute("member", user);
-//		return "view";
-//	}
-
-//	@RequestMapping("view2")
-//	public String view2(Model model, HttpSession session) {
-//		String id = (String) session.getAttribute("id");
-//		User member = us.select(id);
-//		List<MemberPhoto> list = us.listPhoto(id);
-//		model.addAttribute("member", member);
-//		model.addAttribute("list", list);
-//		return "view2";
-//	}
-
-//	@RequestMapping("/updateForm")
-//	public String updateForm(Model model, HttpSession session) {
-//		String id = (String) session.getAttribute("id");
-//		User user = us.select(id);
-//		model.addAttribute("member", user);
-//		return "updateForm";
-//	}
-
-//	@RequestMapping("update")
-//	public String update(User user, Model model, HttpSession session) throws IOException {
-//		String fileName = user.getFile().getOriginalFilename();
-//		// 그림파일을 수정하지 않으면 null 또는 ""이 넘어온다
-//		if (fileName != null && !fileName.equals("")) {
-//			// 그림파일을 수정했을 경우에만 수행
-//			user.setFileName(fileName);
-//			String real = session.getServletContext().getRealPath("/upload");
-//			FileOutputStream fos = new FileOutputStream(new File(real + "/" + fileName));
-//			fos.write(user.getFile().getBytes());
-//			fos.close();
-//		}
-//		int result = us.update(user);
-//		model.addAttribute("result", result);
-//		return "update";
-//	}
-//
-//	@RequestMapping("delete")
-//	public String delete(Model model, HttpSession session) {
-//		String id = (String) session.getAttribute("id");
-//		int result = us.delete(id);
-//		if (result > 0) {
-//			session.invalidate(); // session 삭제
-//		}
-//		model.addAttribute("result", result);
-//		return "delete";
-//	}
-
-	@RequestMapping("/logout")
+	@RequestMapping("user/logout")
 	public String logout(HttpSession session) {
+		String a = (String) session.getAttribute("user_id");
+		System.out.println("logout/invalidate before : session user id : "+a);
 		session.invalidate();
-		return "logout";
+		return "user/logout";
 	}
 }
