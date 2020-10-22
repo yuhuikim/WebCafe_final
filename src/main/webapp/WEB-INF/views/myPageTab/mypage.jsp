@@ -105,8 +105,8 @@ function myMsgsPopup(){
 	</c:if>
 	 </td>
 	<td style="padding-left:5px;padding-bottom:7px">
-		<p style="font-size:13px;color:black;font-weight:bolder; padding-top:5px">  ${user_nickname } </p> 
-		 가입 ${user_regdate } <br> 
+		<p style="font-size:13px;color:black;font-weight:bolder; padding-top:5px">  ${sessionScope.user_nickname } </p> 
+		 가입 ${sessionScope.user_regdate } <br> 
 		
 		
 	 </td>

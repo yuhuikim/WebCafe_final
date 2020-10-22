@@ -36,13 +36,13 @@ public class MyPageController {
 	@RequestMapping("home_yj")
 	public String home_yj( String user_id, String user_nickname, String user_regdate, Model model,HttpSession session) throws IOException {
 		
-		user_id = "pyj078";
-		user_nickname="유댕ㅎㅎ";
-		user_regdate = "2020.10.16."; //Date 로 바꿔줘야함 (위에도)
+		//user_id = "pyj078";
+		//user_nickname="유댕ㅎㅎ";
+		//user_regdate = "2020.10.16."; //Date 로 바꿔줘야함 (위에도)
 		
-		model.addAttribute("user_id", user_id);
-		model.addAttribute("user_nickname", user_nickname);
-		model.addAttribute("user_regdate",user_regdate);
+		//model.addAttribute("user_id", user_id);
+		//model.addAttribute("user_nickname", user_nickname);
+		//model.addAttribute("user_regdate",user_regdate);
 		
 		Object profile = session.getAttribute("profile");
 		
@@ -50,7 +50,7 @@ public class MyPageController {
 		
 		System.out.print("메인화면의 : " + profile);
 		
-		return "home_yj";
+		return "main";
 	}
 	
 	@RequestMapping("myPageTab/memberLevelInfo")
