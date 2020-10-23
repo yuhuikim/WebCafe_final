@@ -21,21 +21,22 @@
 
 	<insert id="insert" parameterType="message">
 				
-		insert into message values(AA.nextval, #{m_sender_id}, #{m_sender_nick}, '0:0:0:0','n', #{m_receiver_id}, 
-		(select user_nickname from user_info
-			where user_id = #{m_receiver_id}),'n', '제목없음', #{m_content}, sysdate)
+		insert into message values(AA.nextval, #{m_sender_id}, #{m_sender_nick}, '0:0:0:0','n', 
+		(select user_id from user_info
+			where user_nickname = #{m_receiver_nick}),
+			#{m_receiver_nick}, 'n', '제목없음', #{m_content}, sysdate)
 	</insert>
 	
 	<select id="sendlist" parameterType="message" resultMap="msgResult">
 		select * from (select a.*, rownum rn from 
 							(select * from message  order by m_num desc) a)
-			where m_sender_nick = '유댕ㅎㅎ' and rn between #{startRow} and #{endRow}
+			where m_sender_nick = #{m_sender_nick} and rn between #{startRow} and #{endRow}
 	</select>
 	
 	<select id="reclist" resultMap="msgResult">
 		select * from (select a.*, rownum rn from 
 							(select * from message  order by m_num desc) a)
-			where m_receiver_nick = '쁘띠길동' and rn between #{startRow} and #{endRow}		
+			where m_receiver_nick = #{m_receiver_nick} and rn between #{startRow} and #{endRow}		
 	</select>
 	
 	<select id="getTotal" parameterType="message"  resultType="integer">

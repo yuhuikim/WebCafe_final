@@ -75,7 +75,7 @@ public class MyPageController {
 	}
 	
 	@RequestMapping("myPageTab/sendmessagePopup")
-	public String sendmessagePopup( String m_receiver_id, Model model, Message message, HttpSession session) {
+	public String sendmessagePopup( String m_receiver_nick, Model model, Message message, HttpSession session) {
 		
 		//user_id = "pyj078";
 		
@@ -173,7 +173,7 @@ public class MyPageController {
 
 	
 	@RequestMapping("myPageTab/my_receivedMail")
-	public String my_receivedMail(String pageNum, Message message, Model model) {
+	public String my_receivedMail(String pageNum, Message message, Model model, HttpSession session) {
 		
 		int rowPerPage = 5;
 		// 페이지가 지정되지 않으면 1페이지를 보여줘라
@@ -193,6 +193,18 @@ public class MyPageController {
 		
 		//List<Message> sendlist = msgs.sendlist(message); //보낸쪽지 리스트
 		
+		
+		String user_id = (String)session.getAttribute("user_id");
+		message.setM_receiver_id(user_id);
+		System.out.println("받은메일에서 m_receiver_id :" + message.getM_receiver_id());
+		
+		
+		String user_nickname= (String)session.getAttribute("user_nickname");
+		message.setM_receiver_nick(user_nickname);
+		System.out.println("받은메일에서 m_receiver_nick" + message.getM_receiver_nick());
+		
+		
+		
 		 List<Message> reclist = msgs.reclist(message); //받은쪽지 리스트
 		
 		 
@@ -209,7 +221,7 @@ public class MyPageController {
 	}
 	
 	@RequestMapping("myPageTab/sendMail")
-	public String sendMail(String pageNum, Message message, Model model) {
+	public String sendMail(String pageNum, Message message, Model model, HttpSession session) {
 		
 		int rowPerPage = 5;
 		// 페이지가 지정되지 않으면 1페이지를 보여줘라
@@ -226,6 +238,18 @@ public class MyPageController {
 		//System.out.println("endRow="+endRow);
 		
 		PagingBean_msg pbm = new PagingBean_msg(currentPage,rowPerPage,total); //보낸쪽지 
+		
+		
+		
+		String user_id = (String)session.getAttribute("user_id");
+		message.setM_sender_id(user_id);
+		System.out.println("보낸메일에서 m_sender_id" + message.getM_sender_id());
+		
+		
+		String user_nickname= (String)session.getAttribute("user_nickname");
+		message.setM_sender_nick(user_nickname);
+		System.out.println("보낸메일에서 m_sender_nick" + message.getM_sender_nick());
+		
 		
 		List<Message> sendlist = msgs.sendlist(message); //보낸쪽지 리스트
 		
