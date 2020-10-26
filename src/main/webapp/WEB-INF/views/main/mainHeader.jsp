@@ -11,7 +11,7 @@
 
 <div class="container" align="center">
 	<div style="width:1080px;height:35px;font-size:12px;">
-		<a href="http://www.naver.com"><img align="left" src="${path }/resources/images/n1.jpg" alt="" /></a>
+		<a href="http://www.naver.com"><img align="left" src="/resources/images/n1.jpg" alt="" /></a>
 		<p align="right" style="padding-top:8px;color:#dedede">
 			<a href="main.html" style="color:black;padding-right:10px">카페홈</a>|
 			<a href="" style="color:black;padding-left:5px;padding-right:10px">새글</a>|
@@ -20,7 +20,7 @@
 			<a href="" class="btn btn-xs btn-default">로그인</a>
 		</p>
 	</div>
-	<img src="${path }/resources/images/main.png" alt="" />
+	<img src="/resources/images/main.png" alt="" />
 	<div class="container" align="left" style="width:1080px;height:45;margin-top:11px;padding-top:11px;border:1px solid #ededed;font-size:13">
 		<a href="" style="color:black;padding-left:5px;padding-right:10px">[영꿀]추천 미드/영화</a>·
 		<a href="" style="color:black;padding-left:5px;padding-right:10px">[꿀팁]미드/영화</a>·
