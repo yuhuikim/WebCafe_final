@@ -22,8 +22,14 @@
 			<input type="hidden" name="r_nick" value="${sessionScope.user_nickname}">
 		
 		<p style="float:left;color:#fc5b5b;">┕</p>
-		<textarea name="r_content" cols="90" rows="3" style="float:left;outline:none;border:1px solid #e6e6e6;resize:none;font-size:13px;"></textarea>
+		<c:if test="${not empty sessionScope.user_id}">
+		<textarea name="r_content" cols="90" rows="3" style="float:left;outline:none;border:1px solid #e6e6e6;resize:none;font-size:13px;" required="required"></textarea>
 		<input type="submit" value="등록" style="float:left;background-color:white;outline:none;border:1px solid #c9c9c9;width:85px;height:49px;margin-left:5px;font-size:13px;font-weight:bold;color:#949494;"/>
+		</c:if>
+		<c:if test="${empty sessionScope.user_id}">
+		<textarea name="r_content" cols="90" rows="3" style="float:left;outline:none;border:1px solid #e6e6e6;resize:none;font-size:13px;" placeholder="로그인 후 이용 가능한 서비스입니다" readonly="readonly"></textarea>
+		<input type="button" value="등록" style="float:left;background-color:white;outline:none;border:1px solid #c9c9c9;width:85px;height:49px;margin-left:5px;font-size:13px;font-weight:bold;color:#949494;"/>
+		</c:if>
 	</form>
 	<p style="float:left;font-size:13px;color:#a8a8a8;margin-top:10px;margin-left:20px;">
 		<span class="glyphicon glyphicon-camera" style="margin-left:5px;cursor:pointer;"><span style="margin:2px;"></span>스티커</span>

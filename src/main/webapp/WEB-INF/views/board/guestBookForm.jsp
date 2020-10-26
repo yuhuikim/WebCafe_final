@@ -24,7 +24,12 @@
  		<table class="table table-bordered" style="float:left;width:840px;height:160px;border:#999999;">
 			<tr>
 				<td colspan="2" style="height:115px;padding-top:20px;padding-left:20px;">
-					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px" name="r_content" cols="90" rows="5" placeholder="글을 입력해주세요"></textarea>
+				<c:if test="${not empty sessionScope.user_id}">
+					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px;resize:none;" name="r_content" cols="90" rows="5" placeholder="글을 입력해주세요" required="required"></textarea>
+				</c:if>
+				<c:if test="${empty sessionScope.user_id}">
+					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px;resize:none;" name="r_content" cols="90" rows="5" placeholder="로그인 후 이용 가능한 서비스입니다" readonly="readonly"></textarea>
+				</c:if>
 				</td>
 			</tr>
 			<tr>
@@ -36,7 +41,12 @@
 					</p>
 				</td>
 				<td style="padding:0px;">
+				<c:if test="${not empty sessionScope.user_id}">
 					<button type="submit" style="height:100%;width:100%;border:none;outline:none;font-size:14px;background-color:#454545;color:white;">등록</button>
+				</c:if>
+				<c:if test="${empty sessionScope.user_id}">
+					<button type="button" style="height:100%;width:100%;border:none;outline:none;font-size:14px;background-color:#454545;color:white;">등록</button>
+				</c:if>
 				</td>
 			</tr>
 		</table>

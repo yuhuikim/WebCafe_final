@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div class="container" align="left" style="width:900px;height:160px;">
 	<form action="udpateGuestBook.html" method="post">
 		<input type="hidden" name="r_num" value="${reply.r_num}">	
@@ -19,12 +20,12 @@
 			<input type="hidden" name="r_ref" value="${reply.r_ref}">
 		</c:if>
 		<input type="hidden" name="r_id" value="${reply.r_id}">
-		<input type="hidden" name="r_nick" value="${reply.r_nickname}">
+		<input type="hidden" name="r_nick" value="${reply.r_nick}">
 		
  		<table class="table table-bordered" style="float:left;width:840px;height:160px;border:#999999;">
 			<tr>
 				<td colspan="2" style="height:115px;padding-top:20px;padding-left:20px;">
-					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px" name="r_content" cols="90" rows="5">${reply.r_content}</textarea>
+					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px" name="r_content" cols="90" rows="5" required="required">${reply.r_content}</textarea>
 				</td>
 			</tr>
 			<tr>

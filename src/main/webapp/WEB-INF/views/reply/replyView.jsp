@@ -16,7 +16,7 @@
 		  if(confirm("정말 삭제하시겠습니까 ?") == true){
 		        alert("삭제되었습니다");
 		        $(location).attr('href', 'deleteReply.html?r_b_num='+r_b_num+'&r_num='+r_num); 
-		        window.history.back();
+/* 		        window.history.back(); */
 		    }
 		    else{
 		        return;
@@ -60,7 +60,7 @@
 	}
 	function replKey(r_num,r_level){
 		$('#replDiv_'+r_num).attr('style','display:active;width:780px;');
-  		$('#replInDiv_'+r_num).load('replyForm.html?r_ref='+r_num);		
+  		$('#replInDiv_'+r_num).load('replyForm.html?r_b_num='+r_b_num+'&r_ref='+r_num);		
 	}
 	function iconDown(r_num){
 		$('#replIcon_'+r_num).attr('class','glyphicon glyphicon-circle-arrow-up');
@@ -105,7 +105,7 @@
 									<span id="modIcon_${rl.r_num}" style="float:right;color:#bdbdbd;cursor:pointer;margin:5px;" class="glyphicon glyphicon-cog" onmouseover="modKey(${rl.r_num})" onmouseout="stopModKey(${rl.r_num})"></span>
 					
 								 	<div id="tab_pop_${rl.r_num}" style="display:none">	
-											<c:if test="${rl.r_id==rl.r_id }">	
+											<c:if test="${sessionScope.user_id == rl.r_id}">
 												<div style="width:80px;height:100px;padding-top:7px;padding-bottom:7px;border:1px solid #cdcdcd;">
 													<table class="table table-hover" style="text-align:center;font-size:14px;color:#8c8c8c;">
 														<tr>
@@ -117,7 +117,7 @@
 													</table>
 												</div>			
 											</c:if>
-											<c:if test="${rl.r_id!=rl.r_id }">
+											<c:if test="${sessionScope.user_id != rl.r_id}">
 												<div style="width:80px;height:60px;padding-top:8px;border:1px solid #cdcdcd;">
 													<table class="table table-hover" style="text-align:center;font-size:14px;color:#8c8c8c;">
 														<tr>

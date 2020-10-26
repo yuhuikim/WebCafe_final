@@ -197,19 +197,20 @@
 		if(confirm('정말 삭제하시겠습니까?')==true){
 			$(location).attr('href', 'deleteGuestBook.html?r_b_num='+r_b_num+'&r_num='+r_num); 
   			alert('삭제되었습니다');
-  			window.history.back();
+/*   			window.history.back(); */
 		} else {
 			return;
 		}
 	}
 
- 	function gbrUpdate(r_num){
+ 	function gbrUpdate(r_num, r_level){
  		$('#gbrUp_'+r_num).text('수정취소');
- 		$('#gbrUp_'+r_num).attr('onclick','removeGbrUpdate('+r_num+')');
+ 		$('#gbrUp_'+r_num).attr('onclick','removeGbrUpdate('+r_num+','+r_level+')');
  		var txt = $('#gbRerepl_'+r_num).find('textarea:first').val();
- 		$('#gbRerepl_'+r_num).find('textarea:first').attr('style','float:left;margin-left:10px;outline:none;font-size:12px;resize:none;');
+ 		$('#gbRerepl_'+r_num).find('textarea:first').attr('cols', 108-(r_level)*8);
+ 		$('#gbRerepl_'+r_num).find('textarea:first').attr('style','float:left;margin-left:5px;outline:none;font-size:12px;resize:none;');
  		$('#gbRerepl_'+r_num).find('textarea:first').attr('id','upRtxt_'+r_num);
- 		$('#gbRerepl_'+r_num).find('textarea:first').after('<button id="upRbtn_'+r_num+'" onclick="upR('+r_num+')" type="button" style="float:left;background-color:white;outline:none;border:1px solid #c9c9c9;width:40px;height:32px;margin-left:5px;font-size:12px;font-weight:bold;color:#949494;">수정</button>');
+ 		$('#gbRerepl_'+r_num).find('textarea:first').after('<button id="upRbtn_'+r_num+'" onclick="upR('+r_num+')" type="button" style="float:left;background-color:white;outline:none;border:1px solid #c9c9c9;width:55px;height:32px;margin-left:5px;font-size:12px;font-weight:bold;color:#949494;">수정</button>');
  	}
  	
  	function upR(r_num){
@@ -229,10 +230,11 @@
   		});
  	}
  	
- 	function removeGbrUpdate(r_num){
+ 	function removeGbrUpdate(r_num, r_level){
  		$('#gbrUp_'+r_num).text('수정');
- 		$('#gbrUp_'+r_num).attr('onclick','gbrUpdate('+r_num+')');
- 		$('#gbRerepl_'+r_num).find('textarea:first').attr('style','margin-left:10px;outline:none;border:none;background-color:transparent;resize:none;font-size:13px;');	
+ 		$('#gbrUp_'+r_num).attr('onclick','gbrUpdate('+r_num+','+r_level+')');
+ 		$('#gbRerepl_'+r_num).find('textarea:first').attr('cols', 100-(r_level)*7);
+ 		$('#gbRerepl_'+r_num).find('textarea:first').attr('style','float:left;margin-left:10px;outline:none;border:none;background-color:transparent;resize:none;font-size:13px;');	
  		$('#upRbtn_'+r_num).remove();
  	}
  	

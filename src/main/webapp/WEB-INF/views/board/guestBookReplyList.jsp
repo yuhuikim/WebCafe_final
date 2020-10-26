@@ -34,14 +34,19 @@
 							<p id="gbrKey_${gbrl.r_num }" style="float:left;font-size:9px;color:#737373;cursor:pointer;margin-left:5px;font-weight:bolder;line-height:10%;" onclick="gbReplKey(${gbrl.r_num},${gbrl.r_level})">┕답글</p>
 						</c:if>
 						<c:if test="${gbrl.r_level-1>=8}">							
-							<p style="float:left;font-size:9px;color:#8f8f8f;margin-left:5px;font-weight:bolder;line-height:50%;">더 댓글을 달 수 없는 댓글입니다.</p>
+							<p style="float:left;font-size:9px;color:#8f8f8f;margin-left:5px;font-weight:bolder;line-height:30%;">더 댓글을 달 수 없는 댓글입니다.</p>
 						</c:if>
-						<p style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;cursor:pointer;">신고</p>
-						<p style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;"> | </p>
-						<p style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;cursor:pointer;" onclick="gbDelete(${gbrl.r_b_num},${gbrl.r_num})">삭제</p>
-						<p style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;"> | </p>
-						<p id="gbrUp_${gbrl.r_num}" style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;cursor:pointer;" onclick="gbrUpdate(${gbrl.r_num})">수정</p>
-						<textarea cols="${98-(gbrl.r_level-1)*7}" rows="2" style="margin-left:10px;outline:none;border:none;background-color:transparent;resize:none;font-size:13px;">${gbrl.r_content}</textarea>
+						
+						<c:if test="${sessionScope.user_id == gbrl.r_id}">
+							<p style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;cursor:pointer;" onclick="gbDelete(${gbrl.r_b_num},${gbrl.r_num})">삭제</p>
+							<p style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;"> | </p>
+							<p id="gbrUp_${gbrl.r_num}" style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;cursor:pointer;" onclick="gbrUpdate(${gbrl.r_num},${gbrl.r_level})">수정</p>
+						</c:if>
+						<c:if test="${sessionScope.user_id != gbrl.r_id}">
+							<p style="float:right;padding-right:7px;font-size:6px;color:#919191;font-weight:bold;line-height:10%;cursor:pointer;">신고</p>
+						</c:if>
+						<br />
+						<textarea cols="${100-(gbrl.r_level)*7}" rows="2" style="float:left;margin-left:10px;outline:none;border:none;background-color:transparent;resize:none;font-size:13px;">${gbrl.r_content}</textarea>
 					</td>
 				</tr>
 				<tr>

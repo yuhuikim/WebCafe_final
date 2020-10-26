@@ -25,9 +25,13 @@
 				<td id="gbListTd_${rl.r_num}" style="width:840px;min-height:160px;padding-left:10px;">
 				<img src="/resources/images/i13.jpg" alt="" style="float:left;"/> 
 				<span style="float:right;font-size:10px;color:#8a8a8a;letter-spacing:1px;" >
-					<img src="/resources/images/i11.jpg" alt="" /> | 
+					<img src="/resources/images/i11.jpg" alt="" />
+					
+					<c:if test="${sessionScope.user_id == rl.r_id}">
+					 | 
 					<a style="color:#8a8a8a;cursor:pointer;" onclick="gbUpdate(${rl.r_num})">수정</a> | 
 					<a style="color:#8a8a8a;cursor:pointer;" onclick="gbDelete(${rl.r_b_num},${rl.r_num})">삭제</a>
+					</c:if>
 				</span>
 				<p style="float:left;padding-top:5px;padding-left:7px;font-size:13px;font-weight:bold;">${rl.r_nick }
 					<img src="/resources/images/i10.jpg" alt="" />
@@ -37,8 +41,12 @@
 				<textarea style="display:block;float:left;white-space: pre-wrap;font-size:14px;text-align:left;margin-top:10px;margin-left:10px;border:none;outline:none;resize:none;" rows="3" cols="110" readonly="readonly">${rl.r_content }</textarea> 
 					<p style="padding-left:10px;font-size:13px;">
 						<a id="clickGbRepl_${rl.r_num}" style="float:left;color:#fc2323;text-decoration:underline;cursor:pointer;" onclick="getGbRepl(${rl.gbReply},${rl.r_num})">댓글 ${rl.gbReply}</a>
+						
+						<c:if test="${sessionScope.user_id != rl.r_id}">
 						<a href="" style="float:right;color:black;padding-left:10px;padding-right:10px;margin-top:2px;">신고</a>
 						<a href="" style="float:right;color:#8f8f8f;cursor:default;">|</a>
+						</c:if>
+						
 						<a href="" style="float:right;color:black;padding-right:10px;"><img src="/resources/images/i12.jpg" alt="" style="margin-bottom:5px;"/>북마크</a>
 					</p>
 				<div id="unfold_${rl.r_num}" style="display:none;"></div>

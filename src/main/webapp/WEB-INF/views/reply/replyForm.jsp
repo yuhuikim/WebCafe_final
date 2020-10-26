@@ -31,7 +31,13 @@
 				</tr>
 				<tr>
 					<td>
-						<textarea style="float:left;border:none;outline:none;width:720px;font-size:12px" name="r_content" cols="90" rows="3" placeholder="댓글을 남겨보세요"></textarea>
+						<c:if test="${not empty sessionScope.user_id}">
+							<textarea style="float:left;border:none;outline:none;width:720px;font-size:12px;resize:none;" name="r_content" cols="90" rows="3" placeholder="댓글을 남겨보세요" required="required"></textarea>
+						</c:if>
+						<c:if test="${empty sessionScope.user_id}">
+							<textarea style="float:left;border:none;outline:none;width:720px;font-size:12px;resize:none;" name="r_content" cols="90" rows="3" placeholder="로그인 후 이용 가능한 서비스입니다" readonly="readonly"></textarea>
+						</c:if>
+					
 					</td>
 				</tr>
 				<tr>
@@ -39,7 +45,13 @@
 						<p>
 							<img src="${path }/resources/images/i8.jpg" alt="" style="float:left;cursor:pointer" onclick=""/>
 							<img src="${path }/resources/images/i9.jpg" alt="" style="float:left;cursor:pointer" onclick=""/>
-							<input style="float:right;border-radius:6px;border:none;outline:none;margin-right:10px;font-size:13px;background-color:transparent;color:#a3a3a3;font-weight:bold" type="submit" value="등록"></input>
+							<c:if test="${not empty sessionScope.user_id}">
+								<input style="float:right;border-radius:6px;border:none;outline:none;margin-right:10px;font-size:13px;background-color:transparent;color:#a3a3a3;font-weight:bold" type="submit" value="등록"></input>
+							</c:if>
+							<c:if test="${empty sessionScope.user_id}">
+								<input style="float:right;border-radius:6px;border:none;outline:none;margin-right:10px;font-size:13px;background-color:transparent;color:#a3a3a3;font-weight:bold" type="button" value="등록"></input>
+							</c:if>
+						
 						</p>
 					</td>
 				</tr>
