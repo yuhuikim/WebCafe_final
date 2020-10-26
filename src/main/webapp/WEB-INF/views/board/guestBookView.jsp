@@ -124,6 +124,7 @@
 
 <script type="text/javascript">
 	var r_b_num= '${r_b_num}';
+	
 	$(function(){
 		/* var r_b_num= '${r_b_num}'; */
 
@@ -222,8 +223,8 @@
   				alert(data);
    				var rnum = data.r_origin;
   				alert("rnum : " + rnum);
-  				$('#gbListTd_'+rnum).scrollTop();	 */
-  			});
+  				$('#gbListTd_'+rnum).scrollTop();
+  			});  */
   			
   		});
  	}
