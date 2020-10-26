@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="loginipns">
+	<resultMap type="loginip" id="loginipResult">
+		<result property="i_num" column="i_num" />
+		<result property="i_id" column="i_id" />
+		<result property="i_ip" column="i_ip" />
+		<result property="i_logdate" column="i_logdate" />
+	</resultMap>
+
+	<!-- myBatis에서 객체명은 소문자로 한다. -->
+	<!-- 받아온 #{i_id}값으로 검색을 하고 있으면 select 하란 뜻!!! -->
+	<select id="select_ip" parameterType="string" resultType="loginip">
+		select * from login_ip_history where i_id = #{i_id}
+	</select>
+
+	<!-- seq_loginip.nextval -->
+	<insert id="insert_ip" parameterType="loginip" >
+		insert into login_ip_history(i_num,i_id,i_ip)
+		values(seq_loginip.nextval,#{i_id},#{i_ip})
+	</insert>
+
+</mapper>
