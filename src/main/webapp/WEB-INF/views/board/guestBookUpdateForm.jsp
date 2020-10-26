@@ -19,7 +19,7 @@
 			<input type="hidden" name="r_ref" value="${reply.r_ref}">
 		</c:if>
 		<input type="hidden" name="r_id" value="${reply.r_id}">
-		<input type="hidden" name="r_nick" value="${reply.r_nick}">
+		<input type="hidden" name="r_nick" value="${reply.r_nickname}">
 		
  		<table class="table table-bordered" style="float:left;width:840px;height:160px;border:#999999;">
 			<tr>

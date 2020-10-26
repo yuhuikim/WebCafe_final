@@ -138,7 +138,7 @@
 				$('#bmi2').attr('src','/resources/images/s3.jpg');	
 			}
 		});
-		$('#guestBookFormDisp').load('guestBookForm.html?r_ref=0');
+		$('#guestBookFormDisp').load('guestBookForm.html?r_b_num='+r_b_num+'&r_ref=0');
  		$('#guestBookListDisp').load('guestBookList.html?r_b_num='+r_b_num+'&startNum=1');
 	
 	});

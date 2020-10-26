@@ -20,7 +20,8 @@ public class GuestBookController {
 	private ReplyService rs;
 	
 	@RequestMapping("guestBookForm.html")
-	public String replyForm(int r_ref, Model model) {
+	public String replyForm(int r_b_num, int r_ref, Model model) {
+		model.addAttribute("r_b_num", r_b_num);
 		model.addAttribute("r_ref", r_ref);
 		return "/board/guestBookForm";
 	}
@@ -39,19 +40,23 @@ public class GuestBookController {
 	
 	@RequestMapping("insertGuestBook.html")
 	public String insert(Reply reply, Model model, HttpServletRequest request) {
-		reply.setR_ip(request.getLocalAddr());	
+		reply.setR_ip(request.getLocalAddr());
+		
 		int rnum = rs.maxNum()+1;
-		if(reply.getR_num()==reply.getR_ref()) { //참조값 없을 때
+		int rref = reply.getR_ref();
+		if(reply.getR_num()==rref) { //참조값 없을 때
 			reply.setR_num(rnum);
 			reply.setR_ref(rnum);
 			reply.setR_origin(rnum);
 			reply.setR_level(0);
 			reply.setR_step(rs.selectMaxStep(reply.getR_b_num())+1);
 		} else { // 참조값 있을 때 aka 대댓글임
+			Reply refReply = rs.getReply(rref);
 			reply.setR_num(rnum);
-			reply.setR_origin(rs.selectOrigin(reply.getR_ref()));
-			reply.setR_level(rs.selectLevel(reply.getR_ref())+1);
-			int step = rs.selectStep(reply.getR_ref());
+            reply.setR_b_num(refReply.getR_b_num());
+			reply.setR_origin(refReply.getR_origin());
+			reply.setR_level(refReply.getR_level()+1);
+			int step = rs.selectStep(rref);
 			reply.setR_step(step+1);
 			rs.updateStep(reply);
 		}

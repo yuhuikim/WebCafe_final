@@ -49,8 +49,7 @@ create table board (
     FOREIGN KEY (b_c_num) REFERENCES cate (c_num),
     FOREIGN KEY (b_id) REFERENCES user_info (user_id)
 );
-ALTER TABLE board DROP COLUMN b_filename;
-alter table board add (b_filename varchar2(100)); 
+
 --업로드 파일
 create table file_upload (
     f_num               NUMBER,                 --pk

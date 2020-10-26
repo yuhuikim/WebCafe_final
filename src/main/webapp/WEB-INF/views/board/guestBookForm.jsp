@@ -11,15 +11,15 @@
 <div id="guestBookForm" class="container" align="left" style="width:900px;height:160px;">
 	<form action="insertGuestBook.html" method="post">
 		<input type="hidden" name="r_num" value="0">	
-		<input type="hidden" name="r_b_num" value="100">
+		<input type="hidden" name="r_b_num" value="${r_b_num}">
 		<c:if test="${empty r_ref || r_ref==0}">
 			<input type="hidden" name="r_ref" value="0">
 		</c:if>
 		<c:if test="${not empty r_ref || r_ref!=0}">
 			<input type="hidden" name="r_ref" value="${r_ref}">
 		</c:if>
-		<input type="hidden" name="r_id" value="tempid">
-		<input type="hidden" name="r_nick" value="tempnick">
+		<input type="hidden" name="r_id" value="${sessionScope.user_id}">
+		<input type="hidden" name="r_nick" value="${sessionScope.user_nickname}">
 		
  		<table class="table table-bordered" style="float:left;width:840px;height:160px;border:#999999;">
 			<tr>

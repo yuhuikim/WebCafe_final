@@ -7,8 +7,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
+	var r_b_num = '${r_b_num}';
+	
 	$(function(){
-		$('#replyFormDisp').load('replyForm.html?r_ref=0');
+		$('#replyFormDisp').load('replyForm.html?r_b_num='+r_b_num+'&r_ref=0');
 	});
  	function rDelete(r_b_num, r_num){
 		  if(confirm("정말 삭제하시겠습니까 ?") == true){
@@ -42,12 +44,12 @@
 	}
  	function up(r_b_num, r_num){
  		alert("수정되었습니다");
-/*      $(location).attr('href', 'udpateReply.html?r_content='+$('#rCont2_'+r_num).val()+'&r_b_num='+r_b_num+'&r_num='+r_num);  */
- 		window.history.back();
+      	$(location).attr('href', 'udpateReply.html?r_content='+$('#rCont2_'+r_num).val()+'&r_b_num='+r_b_num+'&r_num='+r_num);
+/*   	window.history.back(); */
 	}
 	function lst(r_b_num){
-/* 		$(location).attr('href', 'replyList.html?r_b_num='+r_b_num); */
-		window.history.back();
+  		$(location).attr('href', 'replyList.html?r_b_num='+r_b_num);
+/*		window.history.back(); */
 	} 
 	function modKey(r_num){
 		$('#tab_pop_'+r_num).appendTo('#modIcon_'+r_num);

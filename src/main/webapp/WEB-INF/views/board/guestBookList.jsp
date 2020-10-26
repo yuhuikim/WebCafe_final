@@ -32,7 +32,7 @@
 				<p style="float:left;padding-top:5px;padding-left:7px;font-size:13px;font-weight:bold;">${rl.r_nick }
 					<img src="/resources/images/i10.jpg" alt="" />
 					<br />
-					<span style="float:left;font-size:11px;color:#8f8f8f;font-weight:normal;line-height:7px;">${rl.r_update }</span>	
+					<span style="float:left;font-size:11px;color:#8f8f8f;font-weight:normal;line-height:10px;">${rl.r_update }</span>	
 				</p>
 				<textarea style="display:block;float:left;white-space: pre-wrap;font-size:14px;text-align:left;margin-top:10px;margin-left:10px;border:none;outline:none;resize:none;" rows="3" cols="110" readonly="readonly">${rl.r_content }</textarea> 
 					<p style="padding-left:10px;font-size:13px;">

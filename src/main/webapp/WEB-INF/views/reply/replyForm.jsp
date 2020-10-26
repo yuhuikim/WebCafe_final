@@ -14,20 +14,20 @@
 <div id="replyForm" class="container" align="left" style="width:780px;">
 	<form action="insertReply.html" method="post">
 		<input type="hidden" name="r_num" value="0">	
-		<input type="hidden" name="r_b_num" value="100">
+		<input type="hidden" name="r_b_num" value="${r_b_num}">
 		<c:if test="${empty r_ref || r_ref==0}">
 			<input type="hidden" name="r_ref" value="0">
 		</c:if>
 		<c:if test="${not empty r_ref || r_ref!=0}">
 			<input type="hidden" name="r_ref" value="${r_ref}">
 		</c:if>
-		<input type="hidden" name="r_id" value="tempid">
-		<input type="hidden" name="r_nick" value="tempnick">
+		<input type="hidden" name="r_id" value="${sessionScope.user_id}">
+		<input type="hidden" name="r_nick" value="${sessionScope.user_nickname}">
 		
 		<div class="container" style="float:left;width:760px;border:2px solid #e5e5e5;border-radius:10px;padding-top:10px;padding-bottom:1px;">
 	 		<table>
 				<tr>
-					<td><p style="float:left;font-size:13px;font-weight:bold;padding-top:1px;line-height:1px;" onclick="">tempnick</p></td>
+					<td><p style="float:left;font-size:13px;font-weight:bold;padding-top:1px;line-height:1px;" onclick="">${r_nick}</p></td>
 				</tr>
 				<tr>
 					<td>
