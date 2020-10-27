@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div id="replyForm" class="container" align="left" style="width:780px;">
+<div id="replyForm" class="container" align="left" style="width:760px;border:solid 1px green;">
 	<form action="/insertReply.html" method="post">
 		<input type="hidden" name="r_num" value="0">	
 		<input type="hidden" name="r_b_num" value="${r_b_num}">
@@ -24,7 +24,7 @@
 		<input type="hidden" name="r_id" value="${sessionScope.user_id}">
 		<input type="hidden" name="r_nick" value="${sessionScope.user_nickname}">
 		
-		<div class="container" style="float:left;width:760px;border:2px solid #e5e5e5;border-radius:10px;padding-top:10px;padding-bottom:1px;">
+		<div class="container" style="float:left;width:740px;border:2px solid #e5e5e5;border-radius:10px;padding-top:10px;padding-bottom:1px;">
 	 		<table>
 				<tr>
 					<td><p style="float:left;font-size:13px;font-weight:bold;padding-top:1px;line-height:1px;" onclick="">${r_nick}</p></td>
@@ -46,10 +46,10 @@
 							<img src="${path }/resources/images/i8.jpg" alt="" style="float:left;cursor:pointer" onclick=""/>
 							<img src="${path }/resources/images/i9.jpg" alt="" style="float:left;cursor:pointer" onclick=""/>
 							<c:if test="${not empty sessionScope.user_id}">
-								<input style="float:right;border-radius:6px;border:none;outline:none;margin-right:10px;font-size:13px;background-color:transparent;color:#a3a3a3;font-weight:bold" type="submit" value="등록"></input>
+								<input style="float:right;border-radius:6px;border:none;outline:none;margin-right:50px;font-size:13px;background-color:transparent;color:#a3a3a3;font-weight:bold" type="submit" value="등록"></input>
 							</c:if>
 							<c:if test="${empty sessionScope.user_id}">
-								<input style="float:right;border-radius:6px;border:none;outline:none;margin-right:10px;font-size:13px;background-color:transparent;color:#a3a3a3;font-weight:bold" type="button" value="등록"></input>
+								<input style="float:right;border-radius:6px;border:none;outline:none;margin-right:50px;font-size:13px;background-color:transparent;color:#a3a3a3;font-weight:bold" type="button" value="등록"></input>
 							</c:if>
 						
 						</p>

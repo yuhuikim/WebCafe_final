@@ -57,7 +57,7 @@
 	</c:if>
 	<c:if test="${wholeNum>endNum}">
 		<tr id="moreKey_${endNum}">
-			<td style="width:840px;height:50px;padding:0px;font-size:13px;"><button style="width:100%;height:100%;border:none;outline:none;background-color:#f9f9f9;" onclick="more(${r_b_num},${startNum},${endNum})">더보기</button></td>
+			<td style="width:800px;height:50px;padding:0px;font-size:13px;"><button style="width:100%;height:100%;border:none;outline:none;background-color:#f9f9f9;" onclick="more(${r_b_num},${startNum},${endNum})">더보기</button></td>
 		</tr>
 	</c:if>
 </table>

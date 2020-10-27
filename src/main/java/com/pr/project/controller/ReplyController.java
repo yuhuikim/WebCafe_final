@@ -58,13 +58,15 @@ public class ReplyController {
 		reply.setR_num(r_num);
 		reply.setR_content(r_content);
 		rs.update(reply);
-		return "redirect:replyList.html?r_b_num="+r_b_num;
+		/* return "redirect:replyList.html?r_b_num="+r_b_num; */
+		return "redirect:board/boardView.html?b_num="+r_b_num+"&pageNum=1";
 	}
 	
 	@RequestMapping("deleteReply.html")
 	public String delete(int r_b_num, int r_num, Model model) {
 		rs.delete(r_num);
-		return "redirect:replyList.html?r_b_num="+r_b_num;
+		/* return "redirect:replyList.html?r_b_num="+r_b_num; */
+		return "redirect:board/boardView.html?b_num="+r_b_num+"&pageNum=1";
 	}
 
 	@RequestMapping("replyList")

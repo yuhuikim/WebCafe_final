@@ -33,7 +33,7 @@
 		$('#replCol_'+r_num).html('<div class="container" style="float:left;width:780px">'+
 			'<div class="container" style="float:left;width:760px;border:2px solid #e5e5e5;border-radius:10px;padding-top:10px;padding-bottom:1px;">'+
 			'<table><tr><td><p style="float:left;font-size:13px;font-weight:bold;padding-top:1px;line-height:1px;" onclick="">tempnick</p></td></tr><tr><td>'+
-			'<textarea id="rCont2_'+r_num+'" rows="'+rows+'" cols="'+cols+'" style="float:left;border:none;outline:none;width:720px;font-size:12px"'+ 
+			'<textarea id="rCont2_'+r_num+'" rows="'+rows+'" cols="'+cols+'" style="float:left;border:none;outline:none;width:720px;font-size:12px;resize:none;"'+ 
 			'name="r_content" cols="90" rows="3">'+txt+'</textarea></td></tr><tr><td><p><img src="${path }/resources/images/i8.jpg"'+
 			'alt="" style="float:left;cursor:pointer" onclick=""/><img src="${path }/resources/images/i9.jpg" alt="" style="float:left;cursor:pointer"'+
 			'onclick=""/><button type="button" style="float:right;border-radius:6px;border:none;outline:none;margin-right:10px;font-size:13px;'+
@@ -76,9 +76,9 @@
 
 </head>
 <body>
-<div id="replyWhole" style="width:840px;padding-top:0px;margin-left:5px;padding-bottom:0px;min-height:200px;">
+<div id="replyWhole" style="width:820px;padding-top:0px;margin-left:5px;padding-bottom:0px;min-height:200px;">
 
-	<div id="repListDisp" class="container" style="width:840px;padding-left:10px;min-height:100px;padidng-bottom:0px;">
+	<div id="repListDisp" class="container" style="width:820px;padding-left:10px;min-height:100px;padidng-bottom:0px;">
 			<p align="left" style="margin-top:24px;margin-left:10px;font-size:20px;font-weight:bolder">댓글 
 				<a href="" style="margin-left:10px;font-size:15px;color:#333333;font-weight:bolder">등록순</a> 
 				<a href="" style="margin-left:10px;font-size:14px;color:#bdbdbd;font-weight:bolder">최신순</a>
@@ -129,7 +129,7 @@
 									</div>
 								
 								</p>
-								<textarea id="rCont_${rl.r_num }" style="border:none;outline:none;resize:none;font-size:14px;margin-top:1px;margin-bottom:0px;height:100%;" cols="${100-rl.r_level*8}" readonly="readonly">${rl.r_content }</textarea><br />
+								<textarea id="rCont_${rl.r_num }" style="border:none;outline:none;resize:none;font-size:14px;margin-top:1px;margin-bottom:0px;height:100%;" cols="${90-rl.r_level*8}" readonly="readonly">${rl.r_content }</textarea><br />
 								<p style="float:left;font-size:11px;color:#979797;margin-bottom:2px;">${rl.r_update }&nbsp&nbsp
 								<c:if test="${rl.r_level<10}">
 									<p id="rKey_${rl.r_num }" style="float:left;font-size:10px;color:#979797;cursor:pointer;margin-bottom:0px;" onclick="replKey(${rl.r_num},${rl.r_level})">답글쓰기</p>

@@ -51,15 +51,17 @@ public class GuestBookController {
 		 
 		 int rnum = rs.maxNum()+1; 
 		 int rref = reply.getR_ref();
-		 
-		 if(reply.getR_num()==rref) { //참조값 없을 때 reply.setR_num(rnum);
+
+		 if(reply.getR_num()==rref) { //참조값 없을 때
+			 reply.setR_num(rnum);
 			 reply.setR_ref(rnum);
 			 reply.setR_origin(rnum); 
 			 reply.setR_level(0);
 			 reply.setR_step(rs.selectMaxStep(reply.getR_b_num())+1); 
 		 
 		 } else { // 참조값 있을 때 aka 대댓글임 
-			 Reply refReply = rs.getReply(rref); reply.setR_num(rnum);
+			 Reply refReply = rs.getReply(rref); 
+			 reply.setR_num(rnum);
 			 reply.setR_b_num(refReply.getR_b_num());
 			 reply.setR_origin(refReply.getR_origin());
 			 reply.setR_level(refReply.getR_level()+1); 
