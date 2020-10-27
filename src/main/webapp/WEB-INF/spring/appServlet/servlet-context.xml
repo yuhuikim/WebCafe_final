@@ -30,7 +30,7 @@
 	<default-servlet-handler/>
 	<beans:bean id="csh" class="com.pr.project.ChatSocketHandler"></beans:bean>
 	<websocket:handlers>
-		<websocket:mapping handler="csh" path="/chat-ws.do"/>		
+		<websocket:mapping handler="csh" path="/chat-ws.html"/>		
 	</websocket:handlers>
 
 	<beans:bean id="tilesViewResolver"
