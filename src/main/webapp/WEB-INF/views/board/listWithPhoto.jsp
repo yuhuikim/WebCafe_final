@@ -5,6 +5,32 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+
+body {
+	font-family: "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif;
+}
+
+.cateTitle {
+
+	color: #333;
+	font-weight: bolder;
+    font-family: "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    vertical-align: sub;
+}
+
+.cateIntro {
+	margin-top: 15px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #999;
+}
+
+.boardChoose {
+	float:right;
+}
+
 div.gallery {
   margin: 5px;
   border: none;
@@ -54,23 +80,24 @@ div.desc {
 	<div>
 	
 	<!-- 카테고리 -->
-	<div>
-		<h2 align="left" class="sub-tit-color">${cate.c_subject }</h2>
-		<table class="table">
-		   <tr><td><pre style="font-size: 20">${cate.c_intro }</pre></td></tr>
-		</table>
-	</div>
-	
-	
+<div style="height:80px">
+	<h2 align="left" class="cateTitle">${cate.c_subject }</h2>
+	<p style="margin-bottom: 0px;" align="left"class="cateIntro"> ${cate.c_intro } </p>	
+
+
 	
 	<!-- 앨범,목록 선택 -->
-	<div id="boardChoose" align="right">
-	  <a href="${path}/board/listWithPhoto.html?b_c_num=${cate.c_num}&pageNum=${pb.currentPage}&search=${board.search}&keyword=${board.keyword}"
-	     class="btn btn-info glyphicon glyphicon-th-large ">.앨범형</a>
-	  <a href="${path}/board/list.html?b_c_num=${cate.c_num}&pageNum=${pb.currentPage}&search=${board.search}&keyword=${board.keyword}"
-	     class="btn btn-info glyphicon glyphicon-th-list ">.목록형</a>   
-	</div>	
-	
+<span class= "boardChoose" id="boardChoose" align="right">
+  <a href="${path}/board/listWithPhoto.html?b_c_num=${cate.c_num}&pageNum=${pb.currentPage}&search=${board.search}&keyword=${board.keyword}"
+     style="color: black" class="btn  glyphicon glyphicon-th-large ">앨범형</a>
+  <a href="${path}/board/list.html?b_c_num=${cate.c_num}&pageNum=${pb.currentPage}&search=${board.search}&keyword=${board.keyword}"
+     style="color: black"class="btn glyphicon glyphicon-th-list ">목록형</a>   
+</span>
+</div>
+
+<hr style="border-top:1px solid black"/>	
+
+
 	<!-- 앨범형 게시판  -->
 <!-- <div class="container" align="center" style="margin-left:200px;width:900px;padding-top:20px;padding-bottom:20px;"> -->
    <section id="body">
