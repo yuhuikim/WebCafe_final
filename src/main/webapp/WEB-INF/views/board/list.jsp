@@ -3,36 +3,109 @@
 <%@ include file="../header.jsp" %>
 
 <!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Insert title here</title></head><body>
+<title>Insert title here</title>
+
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body {
+	font-family: "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif;
+}
+
+.cateTitle {
+
+	color: #333;
+	font-weight: bolder;
+    font-family: "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    vertical-align: sub;
+}
+
+.cateIntro {
+	margin-top: 15px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #999;
+}
+
+.boardChoose {
+	float:right;
+}
+
+table {
+	border-spacing: 2px;
+}
+
+.tHead tr {
+	align : center;
+	vertical-align: middle;
+    border-bottom-color: #f2f2f2;
+    color: #4e4e4e;
+    
+    height: 40px;
+    padding: 2px;
+    
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.tBody tr {
+	align : center;
+	vertical-align: middle;
+    border-bottom-color: #f2f2f2;
+    color: #4e4e4e;
+    
+    height: 40px;
+    padding: 2px;
+    
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+    
+    font-size: 13px;
+}
+
+</style>
+
+</head><body>
 
 
-<div class="container" align="center" style="margin-left:200px;width:900px;padding-top:20px;padding-bottom:20px;">
+<div class="container" align="center" style="margin-left:200px;width:900px;padding-top:10px;padding-bottom:2px; padding-left:40px">
 
 <!-- 카테고리 -->
-<div>
-	<h2 align="left" class="text-primary">${cate.c_subject }</h2>
-	<table class="table">
-	   <tr><td><pre>${cate.c_intro }</pre></td></tr>
-	</table>
-</div>
+<div style="height:80px">
+	<h2 align="left" class="cateTitle">${cate.c_subject }</h2>
+	<p style="margin-bottom: 0px;" align="left"class="cateIntro"> ${cate.c_intro } </p>	
+
+
 <!-- 앨범,목록 선택 -->
-<div id="boardChoose" align="right">
+<span class= "boardChoose" id="boardChoose" align="right">
   <a href="${path}/board/listWithPhoto.html?b_c_num=${cate.c_num}&pageNum=${pb.currentPage}&search=${board.search}&keyword=${board.keyword}"
-     class="btn btn-info glyphicon glyphicon-th-large ">.앨범형</a>
+     style="color: black" class="btn  glyphicon glyphicon-th-large ">앨범형</a>
   <a href="${path}/board/list.html?b_c_num=${cate.c_num}&pageNum=${pb.currentPage}&search=${board.search}&keyword=${board.keyword}"
-     class="btn btn-info glyphicon glyphicon-th-list ">.목록형</a>   
+     style="color: black"class="btn glyphicon glyphicon-th-list ">목록형</a>   
+</span>
 </div>
 
-<br />
+<hr style="border-top:1px solid black"/>	
+
+
 <!-- 목록형 게시판 -->
 <div id="boardBody">
-<table class="table table-striped table-bordered">
-   <tr><td>글번호</td>
-      <td>제목</td>
-      <td>작성자</td>
-      <td>작성일</td>
-      <td>조회수</td>
-      <td>좋아요</td></tr>
+<!-- <table class="table table-striped table-bordered"> -->
+<table align="center">
+
+<thead class="tHead"> 
+   <tr align="center"><td width=88 > No.</td>
+      <td width=438 >제목</td>
+      <td width=118>작성자</td>
+      <td width=80>작성일</td>
+      <td width=68>조회수</td>
+      <td width=68>좋아요</td></tr>
+ </thead>
+ 
+ <tbody class="tBody">
 <c:if test="${empty list }">
    <tr><td colspan="6">데이터가 없습니다</td></tr>
 </c:if>      
@@ -40,7 +113,7 @@
 
 <c:forEach var="board" items="${list }">
 <c:if test="${board.b_del != 'y'}">
-   <tr><td>${board.b_num }</td>
+   <tr align="center"><td>${board.b_num }</td>
 <%--    <c:if test="${board.del == 'y'}">
       <td colspan="5">삭제된 글입니다</td>
    </c:if> --%>
@@ -59,11 +132,13 @@
 </c:if>   
 </c:forEach>
 </c:if>
+</tbody>
 </table>
 
 <!-- 버튼 -->         
-<div align="right">
-<a href="${path}/board/insertBoardForm.html?b_c_num=${cate.c_num}" class="btn btn-info">게시글 입력</a> 
+<div align="right" style="padding-top:15px">
+
+<a href="${path}/board/insertBoardForm.html?b_c_num=${cate.c_num}" class="btn btn-default">게시글 입력</a> 
 </div>
 
 <!-- 페이징 -->
