@@ -54,7 +54,7 @@ $(function(){
 	function chatPopup(){
 	   var url = "http://172.30.1.103:8888/chat/chat.html";
 	   // var url = "http://172.30.1.103:8888/abc/chat.do";
-	   var newOption = setting(800,800);
+	   var newOption = setting(500,580);
 	   window.open(url,"",newOption);
 	}
 </script>
@@ -173,10 +173,10 @@ $(function(){
 	<%-- <jsp:include page="${path}/cate/cate.jsp" flush="false"/> --%>
 	<div id="cateDisp"></div>
 	<!-- cateDist 어디에 두는것이 좋은가? -->
-<%-- 	<div>
+	<%--
 	<a href="${path}/replyList.html?r_b_num=100">시험용</a><br />
 	<a href="${path}/guestBookView.html?r_b_num=100">시험용2</a><br />
-	</div> --%>
+	--%>
 	
 	</div>
 	</section>

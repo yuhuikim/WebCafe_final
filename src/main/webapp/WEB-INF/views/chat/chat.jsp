@@ -30,7 +30,7 @@
 		$('#message').val("");					//입력한 메시지 삭제
 	}
 	function connect() {
-		websocket=new WebSocket("ws://172.30.1.15:8888/ch11/chat-ws.do"); //선생님 ip, 다같이 채팅위해
+		websocket=new WebSocket("ws://172.30.1.103:8888/chat-ws.html"); //공통 ip, 다같이 채팅위해
 		websocket.onopen = onOpen;
 		websocket.onmessage = onMessage;
 		websocket.onclose = onClose;
@@ -59,16 +59,19 @@
 </script></head><body>
 
 <div class="container">
-	<h2>익명 채팅방</h2>
 <table class="table table-hover">
-	<tr><td>대화영역</td><td><div id="chatMessage"></div></td></tr>	
-	<tr><td>별명</td><td><input type="text" id="nickname"/>
-		<input type="button" id="enterBtn" value="입장" 
-			class="btn btn-sm btn-info"/>
-		<input type="button" id="exitBtn" value="퇴장" 
-			class="btn btn-sm btn-warning"/></td></tr>
-	<tr><td>메시지</td><td><input type="text" id="message" />
-		<input type="button" id="sendBtn" value="전송"
+	
+	<tr><td colspan="3" width="10px;" bgcolor="#00b300" style="color: white">익명 채팅방</td></tr>
+	<tr><td colspan="3"><div id="chatMessage"></div></td></tr>	
+	<tr><td>별명:</td><td><input type="text" id="nickname"/></td>
+		<td>
+			<c:if test="$(#nickname == null)"><input type="button" id="enterBtn" value="입장" 
+				class="btn btn-sm btn-info"/>
+			</c:if> 	
+			<input type="button" id="exitBtn" value="퇴장" 
+				class="btn btn-sm btn-warning"/></td></tr>
+	<tr><td>메시지:</td><td><input type="text" id="message" /></td>
+		<td><input type="button" id="sendBtn" value="전송"
 			class="btn btn-sm btn-success"/></td></tr>			
 </table>
 </div>
