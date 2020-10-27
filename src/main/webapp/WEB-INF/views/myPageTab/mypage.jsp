@@ -134,7 +134,7 @@ function myMsgsPopup(){
 							</a>
 						</td>
 						<td align="right" style="padding-bottom:5px">
-							<a href="" style="font-size:11px;color:#7d7d7d">0개</a>
+							<a href="" style="font-size:11px;color:#7d7d7d;cursor:pointer">${sessionScope.boardWrite}개</a>
 						</td>
 					</tr>
 					<tr >
@@ -144,7 +144,7 @@ function myMsgsPopup(){
 							</a>
 						</td>
 						<td align="right" style="padding-bottom:5px">
-							<a href="" style="font-size:11px;color:#7d7d7d">2개</a>
+							<a href="" style="font-size:11px;color:#7d7d7d;cursor:pointer">${sessionScope.replyWrite}개</a>
 						</td>
 					</tr>
 					

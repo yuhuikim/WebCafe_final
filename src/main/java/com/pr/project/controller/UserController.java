@@ -108,6 +108,10 @@ public class UserController {
 		int result = 0;
 		User ur = us.select(user.getUser_id());
 		
+		int boardWrite = us.selectB(user.getUser_id());
+		int replyWrite = us.selectR(user.getUser_id());
+
+		
 		if (ur == null || ur.getUser_del().equals("y"))
 			result = -1; // 없거나 탈퇴한 회원이다.
 		else if (user.getUser_pwd().equals(ur.getUser_pwd())) {
@@ -128,6 +132,12 @@ public class UserController {
 			session.setAttribute("user_regdate", ur.getUser_regdate());
 		}
 		model.addAttribute("result", result);
+		
+		System.out.println("mypagecontroller: boardWrite = " + boardWrite);
+		System.out.println("mypagecontroller: replyWrite = " + replyWrite);
+		session.setAttribute("boardWrite", boardWrite);
+		session.setAttribute("replyWrite", replyWrite);
+		
 		return "user/login";
 	}
 

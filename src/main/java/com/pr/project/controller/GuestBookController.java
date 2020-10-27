@@ -90,10 +90,8 @@ public class GuestBookController {
 		User user = us.select(reply.getR_id());
 		int boardWrite = us.selectB(user.getUser_id());
 		int replyWrite = us.selectR(user.getUser_id());
-		System.out.println("boardWrite = " + boardWrite);
-		System.out.println("replyWrite = " + replyWrite);
+
 		int level = user.getUser_level();
-		System.out.println("기존 유저 레벨 : " + user.getUser_level());
 
 		if (boardWrite >= 30 && replyWrite >= 50) {
 			user.setUser_level(5);
@@ -115,7 +113,6 @@ public class GuestBookController {
 		model.addAttribute("r_b_num", reply.getR_b_num());
 		model.addAttribute("user_level", user.getUser_level());
 
-		System.out.println("최종 유저 레벨 : " + user.getUser_level());
 		return "redirect:guestBookView.html?r_b_num=" + reply.getR_b_num();
 	}
 
