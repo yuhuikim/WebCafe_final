@@ -243,9 +243,27 @@
 <body>
 
 <div id="guestBookWhole" class="container" align="left" style="margin-left:200px;width:900px;padding-top:20px;padding-bottom:20px;">
-		
-		<p style="font-size:20px;font-weight:bold;padding-top:5px;padding-left:30px;line-height:0px">1.스터디신청 <img id="bmi2" src="/resources/images/s3.jpg" style="cursor:pointer;margin-bottom:5px;" alt="" /></p>
-		<p style="color:#949494;padding-left:30px;">여행영어 스터디 신청하세요!</p>
+		<c:choose>
+			<c:when test="${r_b_num==10}">
+				<c:set var="subject" value="가입 인사"></c:set>
+				<c:set var="intro" value="가입 후 인사를 남겨주세요"></c:set>
+			</c:when>
+			<c:when test="${r_b_num==100}">
+				<c:set var="subject" value="등업 신청"></c:set>
+				<c:set var="intro" value="공지글 참고해서 등업신청 해주세요"></c:set>
+			</c:when>
+			<c:when test="${r_b_num==1000}">
+				<c:set var="subject" value=""></c:set>
+				<c:set var="intro" value=""></c:set>
+			</c:when>
+			<c:when test="${r_b_num==10000}">
+				<c:set var="subject" value=""></c:set>
+				<c:set var="intro" value=""></c:set>
+			</c:when>
+		</c:choose>
+	
+		<p style="font-size:20px;font-weight:bold;padding-top:5px;padding-left:30px;line-height:0px">${subject}<img id="bmi2" src="/resources/images/s3.jpg" style="cursor:pointer;margin-bottom:5px;" alt="" /></p>
+		<p style="color:#949494;padding-left:30px;">${intro}</p>
 	<div id="guestBookDisp" class="container" align="left" style="width:900px;">
 		<div class="alarm_switch">
 		        새글 구독

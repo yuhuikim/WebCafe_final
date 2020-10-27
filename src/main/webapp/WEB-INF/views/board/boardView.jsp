@@ -25,12 +25,13 @@
 </script> -->
 
 <script type="text/javascript">
+
 	var r_b_num = '${board.b_num}';
-
+	
 	$(function(){
- 		$('#replyDisp').load('/replyList.html?r_b_num='+r_b_num);
+			$('#replyDisp').load('/replyList.html?r_b_num='+r_b_num);
 	});
-
+	
    function delchk() {
       result = confirm("삭제하시겠습니까?");
       if (result == true) {
@@ -67,56 +68,60 @@
           //    alert('[' + request.status +error+ '] 에러가 발생하였습니다.', '에러발생');
         }
        });
-
    }
    
 </script>
 </head>
 <body>
+   <div style="float:right; padding:10px;">
+      <a href="list.html?b_c_num=${cate.c_num}&b_num=${board.b_num}&pageNum=${pageNum}"
+         class="btn btn-info" style="background-color: #eff0f2; border:none; color:black;">목록</a>
+      <c:if test="${board.b_id == sessionScope.user_id}">   
+         <a href="updateBoardForm.html?b_c_num=${cate.c_num}&b_num=${board.b_num}&pageNum=${pageNum}"
+            class="btn btn-warning" style="background-color: #eff0f2; border:none; color:black;">수정</a>
+         <a href="deleteBoard.html?b_c_num=${cate.c_num}&b_num=${board.b_num}&pageNum=${pageNum}"
+            onclick="return delchk();" class="btn btn-danger" style="background-color: #eff0f2; border:none; color:black;">삭제</a>
+      </c:if>   
+   </div>
+   <br /> <br /> <br />
    <!-- <div class="container" align="center" style="float:left; width:800px; margin:20px"> -->
-   <div style="margin-top:20px;margin-left: 220px; width: 860px; padding-top:20px; padding-bottom: 20px; border: 0.3px solid lightgray;">
-      <table  style=" width: 820px; margin-top:0px; margin-left: 0px; "> <!-- class="table" -->
+   <div style="margin-left: 220px; width: 860px; padding-top: 10px; padding-bottom: 20px; border: 0.3px solid lightgray;">
+      <table  style=" width: 820px; margin-left: 10px;  "> <!-- class="table" -->
 
          <tr>
-            <td colspan="2" align="right" style="height:20px">
-	           	 <a href="list.html?b_c_num=${cate.c_num}&b_num=${board.b_num}&pageNum=${pageNum}"
-			        class="btn btn-sm btn-info">게시글 목록</a>
-			     <a href="updateBoardForm.html?b_c_num=${cate.c_num}&b_num=${board.b_num}&pageNum=${pageNum}"
-			        class="btn btn-sm btn-warning">수정</a>
-			     <a href="deleteBoard.html?b_c_num=${cate.c_num}&b_num=${board.b_num}&pageNum=${pageNum}"
-			        onclick="return delchk();" class="btn btn-sm btn-danger">삭제</a>
-            </td>
+            <td colspan="2" align="right"></td>
+         </tr>
+
+         <tr>
+            <td colspan="2" style="color: #00cc00">${cate.c_subject }</td>
          </tr>
          <tr>
-            <td colspan="2">
-            	<a href="${path}/board/list.html?b_c_num=${cate.c_num}&pageNum=${pageNum}"  
-				style="color: #00cc00; margin-left:10px;">${cate.c_subject } > </a></td>
+            <td colspan="2" style="font-size: 30px;">${board.b_subject}</td>
          </tr>
          <tr>
-            <td colspan="2" style="font-size: 40px;padding-left:10px;">${board.b_subject}</td>
-         </tr>
-         <tr style="border-bottom: 2px solid #cdcdcd;padding-bottom:0px;">
             <td>
-               <div class="WriterInfo" style="margin:10px; float:left;">
+               <div class="WriterInfo" style="margin:15px; float:left;">
                   <div style="width: 500px;">
                      <a href=""> 
                          <img src="https://ssl.pstatic.net/static/cafe/cafe_pc/default/cafe_profile_77.png?type=c77_77"
                         alt="프로필 사진" width="40" height="40" style="float: left;">
                      </a>
                      <div class="nick_box" style="margin:10px; padding-left: 45px;">
-                        <a id="writerInfocallingio" href="#" role="button" style="font-weight: bold">
+                        <a id="writerInfocallingio" href="#" role="button" style="font-weight: bold; color: black;">
                            ${board.b_nick}</a><span style="font-size:14px;">&nbsp;&nbsp;${user.user_level} 회원등급</span> 
                            <img src="https://cafe.pstatic.net/levelicon/1/1_140.gif" class="icon_level">
-                        <a href="#" class="link_talk" style="color:black; border:1px;">&nbsp;1:1채팅</a>
+                        <a href="#" class="link_talk" style="padding:4px; color:black; border:1px; background:#eff0f2;
+                                                 margin-left:4; font-size:13; border-radius:6px">1:1채팅</a>
                         <br>
-                        <span class="date">${board.b_regdate}</span> <span class="count">&nbsp;&nbsp;
-                        조회 ${board.b_read_cnt}</span>
+                        <span class="date" style="color:lightgray">&nbsp;${board.b_regdate}</span>
+                        <span class="count" style="color:lightgray">&nbsp;&nbsp;
+                                 조회 ${board.b_read_cnt}</span>
                       </div>
                   </div>   
                </div>
                <!-- 헤더 -->
             </td>
-            <td style="float:right;">
+            <td>
                <button type="button" onclick="location.href='replyView.jsp'" style="font-size:13px; border:none; background-color:white;">
                   <img width=20 height=20 src="${path }/resources/images/b1.png" alt="">&nbsp;댓글&nbsp;${board.b_reply_cnt }</button>
                   <span style="font-size:14px;">&nbsp;&nbsp;URL&nbsp;복사</span>
@@ -127,29 +132,33 @@
             <td align="right"><i class="">조회수</i> ${board.b_read_cnt } <i class="far fa-comment-dots">댓글</i> ${board.b_reply_cnt }</td>
             </tr> --%>
       </table>
-   
+         
+      <div style="border: 0.3px solid lightgrey; width: 95%; margin-bottom: 15px;"></div>
+         
       <table style=" width: 820px; margin-left: 10px; "> <!-- class="table" -->
          <tr>
             <td colspan="2">
                <div align="center">
                   <c:forEach var="fu" items="${list}">
-                     <img alt="" src="/resources/upload/${fu.f_filename}" width="200">
+                     <img alt="" src="${path }/upload/${fu.f_filename}" width="200">
                   </c:forEach>
                </div>
 
-               <div style="padding:30px 40px 30px 40px;min-height:300px;">
+               <div style="padding-top: 20px;">
                   <p>${board.b_content }</p>
                </div>
             </td>
          </tr>
          <tr>
             <td>
-               <div style="margin-top: 50px;margin-bottom:0px;line-height:20%">
-                  <i style="color:black;cursor:pointer;"> <!-- <span class="thumb"> -->
+               <div style="margin-top: 50px;margin-bottom: 10px; ">
+                  <a href=""  style="color:black;"> <!-- <span class="thumb"> -->
                      <img src="https://ssl.pstatic.net/static/cafe/cafe_pc/default/cafe_profile_77.png?type=c77_77"
                         alt="프로필 사진" width="36" height="36" style="margin-bottom:13px;"> <!-- </span> -->
-                           <span style="border-bottom:1px solid #4d4d4d;"><strong class="user">${board.b_nick }</strong>님의 게시글 더보기</span>
-                  </i>        
+                           <strong class="user">${board.b_nick }</strong>님의 게시글 더보기
+                        
+                     
+                  </a>
                </div>
             </td>
          </tr>
@@ -165,10 +174,10 @@
          </tr>
       </table>
       <!-- <div id="boardListDisp"></div> -->
-     	<div id="replyDisp" style="min-height:200px;margin-top:30px;margin-left:0px;padding-left:0px; width:850px;border-top:1px dotted #cdcdcd;"></div>
-	 </div>
-   
- 
+      <div id="replyDisp" style="min-height:200px;margin-top:30px;margin-left:0px;padding-left:0px; width:840px;border-top:1px dotted #cdcdcd;"></div>
+      
+   </div>
+
 
 
 </body>
