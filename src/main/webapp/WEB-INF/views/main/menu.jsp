@@ -53,6 +53,7 @@ $(function(){
 	/* 회원정보수정 버튼 이벤트 */
 	function chatPopup(){
 	   var url = "http://172.30.1.103:8888/chat/chat.html";
+	   // var url = "http://172.30.1.103:8888/abc/chat.do";
 	   var newOption = setting(800,800);
 	   window.open(url,"",newOption);
 	}
@@ -139,7 +140,10 @@ $(function(){
 		
 		
 	</div>
-	<button href="" style="text-align:center;background-color:#555555;width:200px;height:35px;color:white;border-radius:1px;border:1px solid #c2c2c2;font-size:13px;margin-top:10px;">카페 가입하기</button>
+	<a href="${path}/user/joinForm.html" class="btn" 
+		style="text-align:center;background-color:#555555;width:200px;height:35px;color:white;border-radius:1px;border:1px solid #c2c2c2;font-size:13px;margin-top:10px;">
+		카페 가입하기</a>
+	<%-- <button href="${path}/user/joinForm.html" style="text-align:center;background-color:#555555;width:200px;height:35px;color:white;border-radius:1px;border:1px solid #c2c2c2;font-size:13px;margin-top:10px;">카페 가입하기</button> --%>
 
 	<a href="javascript:chatPopup();" class="btn btn-default" 
 		style="text-align:center;background-color:white;width:200px;height:35px;border-radius:1px;border:1px solid #c2c2c2;margin-top:10px;margin-bottom:10px;font-size:13px;">
@@ -149,17 +153,19 @@ $(function(){
 		카페 채팅<img src="${path}/resources/images/i7.jpg" alt="" style="margin-bottom:2px"/></a> --%>
 	<%-- <button  style="text-align:center;background-color:white;width:200px;height:35px;border-radius:1px;border:1px solid #c2c2c2;margin-top:10px;margin-bottom:10px;font-size:13px;">카페 채팅
 		<img src="${path}/resources/images/i7.jpg" alt="" style="margin-bottom:2px"/></button> --%>
-	<form action="" method="post" class="form-horizontal">
+<!-- 검색 기능 -->
+	<form action="searchList.html" method="post" class="form-horizontal">
 		<div class="form-inline form-group" style="padding-left:15px;padding-right:5px">
-			<input type="text" id="search" style="float:left;width:160px;height:25px;border-radius:1px;border:1px solid #c2c2c2;"/>
+			<input type="hidden" name="pageNum" value="1" />
+			<input type="text" id="search" style="float:left;width:160px;height:25px;border-radius:1px;border:1px solid #c2c2c2;"
+				placeholder="검색어를 입력하세요" name="keyword" value="${board.keyword }"/>
 			<input type="submit" value="검색" style="float:right;width:40px;height:25px;color:white;background-color:#24c932;border-radius:1px;border:1px solid #24c932;font-size:12px;margin-bottom:4px;"/>
 		</div>
 	</form>
+
 	
 	<!-- 게시판 category -->
-	<div align="right">
-		<a href="${path}/cate/cateList.html" class="btn btn-info, glyphicon glyphicon-edit">.edit</a>
-	</div>
+	
 	<section id="categorybar">
 	<div style="height:800px;padding-top:3px;border-top:2px solid black;border-bottom:1px solid #ededed;">
 	<!-- <div id="cateDisp" style="height:40px;padding-top:3px;border-top:2px solid black;border-bottom:1px solid #ededed;"> -->
@@ -167,10 +173,10 @@ $(function(){
 	<%-- <jsp:include page="${path}/cate/cate.jsp" flush="false"/> --%>
 	<div id="cateDisp"></div>
 	<!-- cateDist 어디에 두는것이 좋은가? -->
-	<%-- <div>
+	<div>
 	<a href="${path}/replyList.html?r_b_num=100">시험용</a><br />
 	<a href="${path}/guestBookView.html?r_b_num=100">시험용2</a><br />
-	</div> --%>
+	</div>
 	
 	</div>
 	</section>

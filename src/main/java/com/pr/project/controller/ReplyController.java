@@ -68,6 +68,7 @@ public class ReplyController {
 
 	@RequestMapping("replyList")
 	public String list(int r_b_num, Model model) {
+
 		List<Reply> replyList = rs.list(r_b_num);
 		model.addAttribute("r_b_num", r_b_num);
 		model.addAttribute("replyList", replyList);

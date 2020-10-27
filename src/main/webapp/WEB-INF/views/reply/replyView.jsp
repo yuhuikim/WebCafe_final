@@ -10,12 +10,12 @@
 	var r_b_num = '${r_b_num}';
 	
 	$(function(){
-		$('#replyFormDisp').load('replyForm.html?r_b_num='+r_b_num+'&r_ref=0');
+		$('#replyFormDisp').load('/replyForm.html?r_b_num='+r_b_num+'&r_ref=0');
 	});
  	function rDelete(r_b_num, r_num){
 		  if(confirm("정말 삭제하시겠습니까 ?") == true){
 		        alert("삭제되었습니다");
-		        $(location).attr('href', 'deleteReply.html?r_b_num='+r_b_num+'&r_num='+r_num); 
+		        $(location).attr('href', '/deleteReply.html?r_b_num='+r_b_num+'&r_num='+r_num); 
 /* 		        window.history.back(); */
 		    }
 		    else{
@@ -44,11 +44,11 @@
 	}
  	function up(r_b_num, r_num){
  		alert("수정되었습니다");
-      	$(location).attr('href', 'udpateReply.html?r_content='+$('#rCont2_'+r_num).val()+'&r_b_num='+r_b_num+'&r_num='+r_num);
+      	$(location).attr('href', '/udpateReply.html?r_content='+$('#rCont2_'+r_num).val()+'&r_b_num='+r_b_num+'&r_num='+r_num);
 /*   	window.history.back(); */
 	}
 	function lst(r_b_num){
-  		$(location).attr('href', 'replyList.html?r_b_num='+r_b_num);
+  		$(location).attr('href', '/replyList.html?r_b_num='+r_b_num);
 /*		window.history.back(); */
 	} 
 	function modKey(r_num){
@@ -60,7 +60,7 @@
 	}
 	function replKey(r_num,r_level){
 		$('#replDiv_'+r_num).attr('style','display:active;width:780px;');
-  		$('#replInDiv_'+r_num).load('replyForm.html?r_b_num='+r_b_num+'&r_ref='+r_num);		
+  		$('#replInDiv_'+r_num).load('/replyForm.html?r_b_num='+r_b_num+'&r_ref='+r_num);		
 	}
 	function iconDown(r_num){
 		$('#replIcon_'+r_num).attr('class','glyphicon glyphicon-circle-arrow-up');
@@ -76,14 +76,14 @@
 
 </head>
 <body>
-<div id="replyWhole" class="container" align="center" style="margin-left:200px;width:900px;padding-top:30px;padding-bottom:20px;">
+<div id="replyWhole" class="container" style="width:840px;padding-top:0px;padding-left:0px;padding-bottom:20px;">
 
-	<div id="repListDisp" class="container" align="left" style="width:900px;">
+	<div id="repListDisp" class="container" style="width:840px;padding-left:5px;">
 			<p align="left" style="margin-top:24px;margin-left:10px;font-size:20px;font-weight:bolder">댓글 
 				<a href="" style="margin-left:10px;font-size:15px;color:#333333;font-weight:bolder">등록순</a> 
 				<a href="" style="margin-left:10px;font-size:14px;color:#bdbdbd;font-weight:bolder">최신순</a>
 			</p>
-			<table class="table" style="float:left;width:850px;">
+			<table class="table" style="float:left;width:800px;">
 			<c:if test="${not empty replyList }">
 				<c:forEach var="rl" items="${replyList }">
 					<c:if test="${rl.r_del=='y'}">
