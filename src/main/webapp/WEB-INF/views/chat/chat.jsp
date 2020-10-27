@@ -65,9 +65,8 @@
 	<tr><td colspan="3"><div id="chatMessage"></div></td></tr>	
 	<tr><td>별명:</td><td><input type="text" id="nickname"/></td>
 		<td>
-			<c:if test="$(#nickname == null)"><input type="button" id="enterBtn" value="입장" 
+			<input type="button" id="enterBtn" value="입장" 
 				class="btn btn-sm btn-info"/>
-			</c:if> 	
 			<input type="button" id="exitBtn" value="퇴장" 
 				class="btn btn-sm btn-warning"/></td></tr>
 	<tr><td>메시지:</td><td><input type="text" id="message" /></td>
