@@ -14,4 +14,10 @@ public interface UserService {
 	User selectN(String user_nickname);
 
 	int updateN(User user);
+
+	int selectB(String user_id);
+	
+	int selectR(String user_id);
+
+	void updateL(User user);
 }

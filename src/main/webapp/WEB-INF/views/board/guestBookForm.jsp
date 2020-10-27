@@ -9,7 +9,11 @@
 </head>
 <body>
 <div id="guestBookForm" class="container" align="left" style="width:900px;height:160px;">
-	<form action="insertGuestBook.html" method="post">
+	<c:set var="formurl" value="insertGuestBook.html"></c:set>
+	<c:if test="${r_b_num==100}">
+		<c:set var="formurl" value="requestLevelUp.html"></c:set>
+	</c:if>
+	<form action="${formurl}" method="post">
 		<input type="hidden" name="r_num" value="0">	
 		<input type="hidden" name="r_b_num" value="${r_b_num}">
 		<c:if test="${empty r_ref || r_ref==0}">

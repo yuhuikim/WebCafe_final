@@ -41,4 +41,19 @@ public class UserServiceImpl implements UserService {
 		return ud.updateN(user);
 	}
 
+	@Override
+	public int selectB(String user_id) {
+		return ud.selectB(user_id);
+	}
+
+	@Override
+	public int selectR(String user_id) {
+		return ud.selectR(user_id);
+	}
+
+	@Override
+	public void updateL(User user) {
+		ud.updateL(user);
+	}
+
 }

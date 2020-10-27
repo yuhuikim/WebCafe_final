@@ -41,5 +41,20 @@ public class UserDaoImpl implements UserDao {
 		
 		return sst.update("userns.updateN",user);
 	}
+
+	@Override
+	public int selectB(String user_id) {
+		return sst.selectOne("userns.selectB", user_id);
+	}
+
+	@Override
+	public int selectR(String user_id) {
+		return sst.selectOne("userns.selectR", user_id);
+	}
+
+	@Override
+	public void updateL(User user) {
+		sst.update("userns.updateL",user);
+	}
 }
 

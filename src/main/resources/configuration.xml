@@ -10,6 +10,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="user" type="com.pr.project.model.User" />
 		<typeAlias alias="loginip" type="com.pr.project.model.LoginIp" />
 		<typeAlias alias="message" type="com.pr.project.model.Message"/>
+		<typeAlias alias="cate" type="com.pr.project.model.Cate" />
+		<typeAlias alias="fileUpload" type="com.pr.project.model.FileUpload"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="board.xml" />
@@ -18,5 +20,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="user.xml" />
 		<mapper resource="loginip.xml" />
 		<mapper	resource="message.xml" />
+		<mapper resource="cate.xml" />
 	</mappers>
 </configuration>

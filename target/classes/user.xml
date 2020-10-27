@@ -44,4 +44,14 @@
 		update user_info set user_nickname = #{user_nickname} where user_id = #{user_id}
 	</update>
 	
+	<select id="selectB" parameterType="string" resultType="integer">
+		select count(*) as boardWrite from board where b_id=#{user_id}	
+	</select>
+	<select id="selectR" parameterType="string" resultType="integer">
+		select count(*) as replyWrite from reply where r_id=#{user_id}	
+	</select>
+	<update id="updateL" parameterType="user">
+		update user_info set user_level = #{user_level} where user_id = #{user_id}
+	</update>
+		
 </mapper>

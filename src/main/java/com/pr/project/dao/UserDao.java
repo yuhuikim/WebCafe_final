@@ -15,4 +15,10 @@ public interface UserDao {
 
 	int updateN(User user);
 
+	int selectB(String user_id);
+
+	int selectR(String user_id);
+
+	void updateL(User user);
+
 }
