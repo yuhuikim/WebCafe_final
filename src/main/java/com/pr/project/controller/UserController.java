@@ -108,10 +108,6 @@ public class UserController {
 		int result = 0;
 		User ur = us.select(user.getUser_id());
 		
-		int boardWrite = us.selectB(user.getUser_id());
-		int replyWrite = us.selectR(user.getUser_id());
-
-		
 		if (ur == null || ur.getUser_del().equals("y"))
 			result = -1; // 없거나 탈퇴한 회원이다.
 		else if (user.getUser_pwd().equals(ur.getUser_pwd())) {
@@ -122,21 +118,24 @@ public class UserController {
 			session.setAttribute("user_id", user.getUser_id()); // 로그인 상태 유지
 			String a = (String) session.getAttribute("user_id");
 			System.out.println("login: session user id : "+a);
-			
-			
+
 			//유정 추가
 			session.setAttribute("user", ur);
 			System.out.println(ur);
 			System.out.println(ur.getUser_nickname()); // 닉네임 가져옴
 			session.setAttribute("user_nickname", ur.getUser_nickname());
 			session.setAttribute("user_regdate", ur.getUser_regdate());
+			
+			int boardWrite = us.selectB(user.getUser_id());
+			int replyWrite = us.selectR(user.getUser_id());
+			session.setAttribute("boardWrite", boardWrite);
+			session.setAttribute("replyWrite", replyWrite);
+			
+			session.setAttribute("user_level", ur.getUser_level());
 		}
+	
 		model.addAttribute("result", result);
 		
-		System.out.println("mypagecontroller: boardWrite = " + boardWrite);
-		System.out.println("mypagecontroller: replyWrite = " + replyWrite);
-		session.setAttribute("boardWrite", boardWrite);
-		session.setAttribute("replyWrite", replyWrite);
 		
 		return "user/login";
 	}
