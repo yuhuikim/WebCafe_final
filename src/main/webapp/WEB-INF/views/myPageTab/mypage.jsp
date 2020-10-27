@@ -116,20 +116,29 @@ function myMsgsPopup(){
 <table width="180px">
 <tr style="font-size:13px">
 <c:set var="level" value="꿀벌"></c:set>
+<c:set var="imageName" value="level1.png"></c:set>
 	<c:if test="${sessionScope.user_level==2}">
 		<c:set var="level" value="꿀 1통"></c:set>
+		<c:set var="imageName" value="level2.jpg"></c:set>
 	</c:if>
 	<c:if test="${sessionScope.user_level==3}">
 		<c:set var="level" value="꿀 2통"></c:set>
+		<c:set var="imageName" value="level3.jpg"></c:set>
 	</c:if>
 	<c:if test="${sessionScope.user_level==4}">
 		<c:set var="level" value="꿀 3통"></c:set>
+		<c:set var="imageName" value="level4.jpg"></c:set>
 	</c:if>
 	<c:if test="${sessionScope.user_level==5}">
 		<c:set var="level" value="꿀박스"></c:set>
+		<c:set var="imageName" value="level5.jpg"></c:set>
+	</c:if>
+	<c:if test="${sessionScope.user_id=='master'}">
+		<c:set var="level" value="매니저"></c:set>
+		<c:set var="imageName" value="level6.jpg"></c:set>
 	</c:if>
 	
-	<td style="padding-top:10px;padding-bottom:10px;color:#7d7d7d;"> <img alt="" src="${path }/resources/images/level1.png">${level}</td>
+	<td style="padding-top:10px;padding-bottom:10px;color:#7d7d7d;"> <img alt="" src="${path }/resources/images/${imageName}">${level}</td>
 	<td align="right" style="font-size:11px;"> <a href="javascript:popupOpen();" style="color:black"> 멤버등급 안내</a> </td>
 </tr>
 
