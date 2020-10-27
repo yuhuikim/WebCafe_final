@@ -3,6 +3,7 @@ package com.pr.project.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -77,7 +78,7 @@ public class GuestBookController {
 	 
 
 	@RequestMapping("requestLevelUp.html")
-	public String requestLevelUp(Reply reply, Model model, HttpServletRequest request) {
+	public String requestLevelUp(Reply reply, Model model, HttpServletRequest request, HttpSession session) {
 		reply.setR_ip(request.getLocalAddr());
 
 		int rnum = rs.maxNum() + 1;
@@ -112,6 +113,8 @@ public class GuestBookController {
 		rs.insert(reply);
 		model.addAttribute("r_b_num", reply.getR_b_num());
 		model.addAttribute("user_level", user.getUser_level());
+		
+		session.setAttribute("user_level", user.getUser_level());
 
 		return "redirect:guestBookView.html?r_b_num=" + reply.getR_b_num();
 	}
