@@ -28,8 +28,7 @@
 	var r_b_num = '${board.b_num}';
 
 	$(function(){
- 		$('#replyDisp').load('/replyList.html?r_b_num=100');
- 		$('#replyFormDisp').load('/replyForm.html?r_b_num='+r_b_num+'&r_ref=0');
+ 		$('#replyDisp').load('/replyList.html?r_b_num='+r_b_num);
 	});
 
    function delchk() {
@@ -166,8 +165,8 @@
          </tr>
       </table>
       <!-- <div id="boardListDisp"></div> -->
-      <div id="replyDisp" style="margin-top:30px;margin-left:0px;padding-left:0px; width:850px;border-top:1px dotted #cdcdcd;"></div>
-   </div>
+     	<div id="replyDisp" style="min-height:200px;margin-top:30px;margin-left:0px;padding-left:0px; width:850px;border-top:1px dotted #cdcdcd;"></div>
+	 </div>
    
  
 

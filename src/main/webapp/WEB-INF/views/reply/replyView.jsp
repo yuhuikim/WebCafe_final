@@ -76,14 +76,14 @@
 
 </head>
 <body>
-<div id="replyWhole" class="container" style="width:840px;padding-top:0px;padding-left:0px;padding-bottom:20px;">
+<div id="replyWhole" style="width:840px;padding-top:0px;margin-left:5px;padding-bottom:0px;min-height:200px;">
 
-	<div id="repListDisp" class="container" style="width:840px;padding-left:5px;">
+	<div id="repListDisp" class="container" style="width:840px;padding-left:10px;min-height:100px;padidng-bottom:0px;">
 			<p align="left" style="margin-top:24px;margin-left:10px;font-size:20px;font-weight:bolder">댓글 
 				<a href="" style="margin-left:10px;font-size:15px;color:#333333;font-weight:bolder">등록순</a> 
 				<a href="" style="margin-left:10px;font-size:14px;color:#bdbdbd;font-weight:bolder">최신순</a>
 			</p>
-			<table class="table" style="float:left;width:800px;">
+			<table class="table" style="float:left;width:800px;padding-bottom:0px;">
 			<c:if test="${not empty replyList }">
 				<c:forEach var="rl" items="${replyList }">
 					<c:if test="${rl.r_del=='y'}">
@@ -155,7 +155,7 @@
 			</c:if>	
 			<tr><td colspan="12" style="padding-top:20px;">
 			
-			<div id="replyFormDisp" style="width:800px"></div>
+			<div id="replyFormDisp" style="width:800px;"></div>
 			
 			</td></tr>
 		</table>
