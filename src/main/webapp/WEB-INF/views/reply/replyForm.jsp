@@ -12,7 +12,7 @@
 <body>
 
 <div id="replyForm" class="container" align="left" style="width:780px;">
-	<form action="insertReply.html" method="post">
+	<form action="/insertReply.html" method="post">
 		<input type="hidden" name="r_num" value="0">	
 		<input type="hidden" name="r_b_num" value="${r_b_num}">
 		<c:if test="${empty r_ref || r_ref==0}">

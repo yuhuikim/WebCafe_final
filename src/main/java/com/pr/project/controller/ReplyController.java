@@ -48,7 +48,8 @@ public class ReplyController {
 		}
 		rs.insert(reply);
 		model.addAttribute("r_b_num", reply.getR_b_num());
-		return "redirect:replyList.html?r_b_num="+reply.getR_b_num();
+		/* return "redirect:replyList.html?r_b_num="+reply.getR_b_num(); */
+		return "redirect:board/boardView.html?b_num="+reply.getR_b_num()+"&pageNum=1";
 	}
 	
 	@RequestMapping("udpateReply.html")

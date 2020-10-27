@@ -197,7 +197,8 @@ public class BoardController {
        return "board/insertBoard";
    }   
    @RequestMapping("board/boardView")
-	public String view(int b_num, String pageNum, Model model) {
+	public String view(int b_num, String pageNum, Model model, HttpSession session) {
+	   	session.setAttribute("getReply", "yes");
 
 		bs.updateReadCount(b_num);
 				

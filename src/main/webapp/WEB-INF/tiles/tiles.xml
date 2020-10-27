@@ -21,8 +21,7 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/main/mainBody.jsp" />
 	</definition>
-<!-- 	<definition name="/reply/replyView" extends="tilesbase">
-		<put-attribute name="title" value="시험용ㅎㅎ 댓글페이지 입뉘다" />
+<!--  	<definition name="/reply/replyView" extends="tilesbase">
 		<put-attribute name="body"
 			value="/WEB-INF/views/reply/replyView.jsp" />
 	</definition> -->
