@@ -25,15 +25,10 @@ public class UserController {
 	private LoginIpService ls;
 
 	@RequestMapping("user/joinForm")
-	public String joinForm(HttpSession session,Model model) {
-		System.out.println(session.getAttribute("textColor2"));
-		
-		
-		String textColor2 = (String) session.getAttribute("textColor2");
-		model.addAttribute("textColor2", textColor2);
-		
-		return "user/joinForm";
-	}
+	   public String joinForm(HttpSession session, Model model) {
+	      return "user/joinForm";
+	   }
+
 
 	@RequestMapping(value = "user/idChk", produces = "text/html;charset=utf-8") // text를 html로 바꿔주고 한글은 utf-8로 받기
 	@ResponseBody // jsp 통하지 말고 바로 문자로 전달
