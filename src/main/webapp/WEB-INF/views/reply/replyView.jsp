@@ -48,7 +48,8 @@
 /*   	window.history.back(); */
 	}
 	function lst(r_b_num){
-  		$(location).attr('href', '/replyList.html?r_b_num='+r_b_num);
+		$(location).attr('href', '/board/boardView.html?b_num='+r_b_num+'&pageNum=1');
+/*   	$(location).attr('href', '/replyList.html?r_b_num='+r_b_num); */
 /*		window.history.back(); */
 	} 
 	function modKey(r_num){

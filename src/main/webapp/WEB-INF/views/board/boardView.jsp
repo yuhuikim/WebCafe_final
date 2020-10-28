@@ -130,17 +130,17 @@
          <%-- <tr>
             <td>${board.b_regdate } </td>
             <td align="right"><i class="">조회수</i> ${board.b_read_cnt } <i class="far fa-comment-dots">댓글</i> ${board.b_reply_cnt }</td>
-            </tr> --%>
+            </tr> --%> 
       </table>
          
       <div style="border: 0.3px solid lightgrey; width: 95%; margin-bottom: 15px;"></div>
          
-      <table style=" width: 820px; margin-left: 10px; "> <!-- class="table" -->
+      <table style=" width: 820px; margin-top:20px; margin-left: 10px; "> <!-- class="table" -->
          <tr>
             <td colspan="2">
                <div align="center">
                   <c:forEach var="fu" items="${list}">
-                     <img alt="" src="/resources/upload/${fu.f_filename}" width="200">
+                     <img alt="" src="/resources/upload/${fu.f_filename}" width="600px;">
                   </c:forEach>
                </div>
 
