@@ -41,20 +41,20 @@
             </a>
          </td>
       </tr>
-      <tr>
-         <td title="${cate.c_intro}" style="font-weight:bold; font-size: 14px;">
-                     <c:if test="${!(cate.c_level > 0) }">♬&nbsp;${cate.c_subject }
-                     </c:if>
-                     <c:if test="${cate.c_level > 0 }">
-                        <%-- <img src="images/level.gif" alt="" height="5"
-                              width="${cate.c_level*10}"> --%>
-                        <a href="${path}/board/list.html?b_c_num=${cate.c_num}" style="color:black; font-weight: 400; font-size: 13;" > 
-                           <img src="${path }/resources/images/c3.svg" alt="" height="13" width="13" 
-                              style="margin-bottom: 3.5px; margin-right: 4px;"/>${cate.c_subject }
-                        </a>
-                     </c:if>
-         </td>
-      </tr>
+	      <%-- <tr>
+	         <td title="${cate.c_intro}" style="font-weight:bold; font-size: 14px;">
+	                     <c:if test="${!(cate.c_level > 0) }">♬&nbsp;${cate.c_subject }
+	                     </c:if>
+	                     <c:if test="${cate.c_level > 0 }">
+	                        <img src="images/level.gif" alt="" height="5"
+	                              width="${cate.c_level*10}">
+	                        <a href="${path}/board/list.html?b_c_num=${cate.c_num}" style="color:black; font-weight: 400; font-size: 13;" > 
+	                           <img src="${path }/resources/images/c3.svg" alt="" height="13" width="13" 
+	                              style="margin-bottom: 3.5px; margin-right: 4px;"/>${cate.c_subject }
+	                        </a>
+	                     </c:if>
+	         </td>
+	      </tr> --%>
 
       <c:if test="${not empty list }">
          <c:forEach var="cate" items="${list }">

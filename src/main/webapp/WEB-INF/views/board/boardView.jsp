@@ -140,7 +140,7 @@
             <td colspan="2">
                <div align="center">
                   <c:forEach var="fu" items="${list}">
-                     <img alt="" src="${path }/upload/${fu.f_filename}" width="200">
+                     <img alt="" src="/resources/upload/${fu.f_filename}" width="200">
                   </c:forEach>
                </div>
 

@@ -162,7 +162,12 @@ $(function(){
 			<input type="submit" value="검색" style="float:right;width:40px;height:25px;color:white;background-color:#24c932;border-radius:1px;border:1px solid #24c932;font-size:12px;margin-bottom:4px;"/>
 		</div>
 	</form>
-
+	<div align="right">
+      <c:if test="${sessionScope.user_id == 'master'}">
+            <a href="${path}/cate/cateList.html" 
+            class="btn btn-info, glyphicon glyphicon-edit">.edit</a>
+      </c:if>
+   </div>
 	
 	<!-- 게시판 category -->
 	

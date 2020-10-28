@@ -4,7 +4,7 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	table { height: 450px; border: 2px solid green;
+	table { height: 450px; border:none;
 		table-layout: fixed; overflow: hidden; }  		/* 넘치면 감춘다 */
 	#chatMessage { height: 400px; overflow: scroll; }	/* 넘치면 스크롤기능 */
 </style>
