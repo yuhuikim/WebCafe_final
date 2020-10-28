@@ -11,7 +11,7 @@
 </head>
 <body>
 <script type="text/javascript"> 
-alert("삭제버튼클릭완료");
+alert("삭제 버튼 클릭완료");
 
 location.href="sendMail.html";
 

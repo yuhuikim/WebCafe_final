@@ -86,7 +86,7 @@ $(function(){
 		<table style="width: 180px">
 			<tr>
 				<td colspan="2" style="padding-top:10px;padding-bottom:5px" >
-					<a href="" style="font-size:13px;color:#7d7d7d"><img src="/resources/images/i1.jpg" alt="" />가지5단계</a>
+					<a href="" style="font-size:13px;color:#7d7d7d"><img src="/resources/images/i1.jpg" alt="" />가지 5단계</a>
 				</td>
 			</tr>
 			<tr>
@@ -140,19 +140,25 @@ $(function(){
 		
 		
 	</div>
-	<a href="${path}/user/joinForm.html" class="btn" 
-		style="text-align:center;background-color:#555555;width:200px;height:35px;color:white;border-radius:1px;border:1px solid #c2c2c2;font-size:13px;margin-top:10px;">
-		카페 가입하기</a>
-	<%-- <button href="${path}/user/joinForm.html" style="text-align:center;background-color:#555555;width:200px;height:35px;color:white;border-radius:1px;border:1px solid #c2c2c2;font-size:13px;margin-top:10px;">카페 가입하기</button> --%>
+	    <!-- 아이디가 세션에 없는 경우 // 카페 가입하기 버튼 -->
+		<c:if test="${empty sessionScope.user_id}">
+			<button type="button" onClick="location.href='user/joinForm.html'"
+				style="text-align: center; background-color: #555555; width: 200px; height: 35px; color: white; border-radius: 1px; border: 1px solid #c2c2c2; font-size: 13px; margin-top: 10px;">카페
+				가입하기</button>
+		</c:if>
+
+		<!-- 아이디가 세션에 있는 경우 // 카페 글쓰기 버튼-->
+		<c:if test="${not empty sessionScope.user_id}">
+			<button type="button" onClick="location.href='board/insertBoardForm.html'"
+				style="text-align: center; background-color: #555555; width: 200px; height: 35px; color: white; border-radius: 1px; border: 1px solid #c2c2c2; font-size: 13px; margin-top: 10px;">카페
+				글쓰기</button>
+		</c:if>
 
 	<a href="javascript:chatPopup();" class="btn btn-default" 
 		style="text-align:center;background-color:white;width:200px;height:35px;border-radius:1px;border:1px solid #c2c2c2;margin-top:10px;margin-bottom:10px;font-size:13px;">
    		카페 채팅<img src="${path}/resources/images/i7.jpg" alt="" style="margin-bottom:2px"/></a>
-	<%-- <a href="http://172.30.1.103:8888/chat/chat.html" class="btn btn-default" 
-		style="text-align:center;background-color:white;width:200px;height:35px;border-radius:1px;border:1px solid #c2c2c2;margin-top:10px;margin-bottom:10px;font-size:13px;">
-		카페 채팅<img src="${path}/resources/images/i7.jpg" alt="" style="margin-bottom:2px"/></a> --%>
-	<%-- <button  style="text-align:center;background-color:white;width:200px;height:35px;border-radius:1px;border:1px solid #c2c2c2;margin-top:10px;margin-bottom:10px;font-size:13px;">카페 채팅
-		<img src="${path}/resources/images/i7.jpg" alt="" style="margin-bottom:2px"/></button> --%>
+
+
 <!-- 검색 기능 -->
 	<form action="searchList.html" method="post" class="form-horizontal">
 		<div class="form-inline form-group" style="padding-left:15px;padding-right:5px">

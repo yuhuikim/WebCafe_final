@@ -13,7 +13,7 @@
       <td>조회수</td>
       <td>좋아요</td></tr>
 <c:if test="${empty list }">
-   <tr><td colspan="6">데이터가 없습니다</td></tr>
+   <tr><td colspan="6">데이터가 없습니다.</td></tr>
 </c:if>      
 <c:if test="${not empty list }">
 

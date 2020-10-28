@@ -6,8 +6,9 @@
 
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
-	alert("새로운 카테고리가 입력되었습니다");
+	alert("새로운 카테고리가 입력 되었습니다.");
 	location.href="${path}/cate/cateList.html"; 
+
 	/* 자식창 닫으면서 부모창 새로고침 */
 	opener.parent.location.reload();
 	window.close();

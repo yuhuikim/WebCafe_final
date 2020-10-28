@@ -5,7 +5,7 @@
 <title>Insert title here</title></head><body>
 <c:if test="${result > 0}">
    <script type="text/javascript">
-      alert("입력 되었습니다");
+      alert("입력 되었습니다.");
       location.href="list.html?b_c_num=${cate.c_num}";  /* /pageNum/${pageNum} */
    </script>
 </c:if>

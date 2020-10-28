@@ -179,7 +179,7 @@
   		});	
   		$('#unfold2line_'+r_num).attr('style','display:active;border:1px dotted #d9d9d9;margin-top:0px;margin-bottom:0px;margin-right:20px;');
   		$('#unfold2_'+r_num).attr('style','display:active;');
-		$('#gbrKey_'+r_num).text('┕답글취소');
+		$('#gbrKey_'+r_num).text('┕답글 취소');
 		$('#gbrKey_'+r_num).attr('onclick', 'removeGbReplKey('+r_num+')');
 	}
 	function removeGbReplKey(r_num){
@@ -217,7 +217,7 @@
  		var txt = $('#upRtxt_'+r_num).val();
  		var sendData = 'r_num='+r_num+'&r_content='+txt;
  		$.post('gbReplyUpdate.html', sendData, function(data){
-  			alert('수정되었습니다');
+  			alert('수정되었습니다.');
 			location.href="guestBookView.html?r_b_num="+r_b_num;
   			
 /*  			$.post('getReply.html', 'r_num='+r_num, function(data){
@@ -246,11 +246,11 @@
 		<c:choose>
 			<c:when test="${r_b_num==10}">
 				<c:set var="subject" value="가입 인사"></c:set>
-				<c:set var="intro" value="가입 후 인사를 남겨주세요"></c:set>
+				<c:set var="intro" value="가입 후 인사를 남겨주세요."></c:set>
 			</c:when>
 			<c:when test="${r_b_num==100}">
 				<c:set var="subject" value="등업 신청"></c:set>
-				<c:set var="intro" value="공지글 참고해서 등업신청 해주세요"></c:set>
+				<c:set var="intro" value="공지글 참고해서 등업신청 해주세요."></c:set>
 			</c:when>
 			<c:when test="${r_b_num==1000}">
 				<c:set var="subject" value=""></c:set>

@@ -29,10 +29,10 @@
 			<tr>
 				<td colspan="2" style="height:115px;padding-top:20px;padding-left:20px;">
 				<c:if test="${not empty sessionScope.user_id}">
-					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px;resize:none;" name="r_content" cols="90" rows="5" placeholder="글을 입력해주세요" required="required"></textarea>
+					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px;resize:none;" name="r_content" cols="90" rows="5" placeholder="글을 입력해주세요." required="required"></textarea>
 				</c:if>
 				<c:if test="${empty sessionScope.user_id}">
-					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px;resize:none;" name="r_content" cols="90" rows="5" placeholder="로그인 후 이용 가능한 서비스입니다" readonly="readonly"></textarea>
+					<textarea style="float:left;border:none;outline:none;width:800px;font-size:13px;resize:none;" name="r_content" cols="90" rows="5" placeholder="로그인 후 이용 가능한 서비스입니다." readonly="readonly"></textarea>
 				</c:if>
 				</td>
 			</tr>

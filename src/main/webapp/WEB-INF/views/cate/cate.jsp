@@ -18,7 +18,7 @@
 
       <c:if test="${empty list }">
          <tr>
-            <td>데이터가 없습니다</td>
+            <td>데이터가 없습니다.</td>
          </tr>
       </c:if>
 
@@ -29,7 +29,7 @@
          <td>
             <a href="${path}/guestBookView.html?r_b_num=10" style="color:black; font-size: 12.9px;">
                <img src="${path }/resources/images/c3.svg" alt="" height="13" width="13" 
-                  style="margin-bottom: 3.5px; margin-right: 4px; "/>[친목] 가입 인사
+                  style="margin-bottom: 3.5px; margin-right: 4px; "/>[친목] 가입인사
             </a>
          </td>
       </tr>
@@ -37,25 +37,11 @@
          <td>
             <a href="${path}/guestBookView.html?r_b_num=100" style="color:black; font-size: 12.9px;">
                <img src="${path }/resources/images/c3.svg" alt="" height="13" width="13" 
-                  style="margin-bottom: 3.5px; margin-right: 4px; "/>[친목] 등업 신청
+                  style="margin-bottom: 3.5px; margin-right: 4px; "/>[친목] 등업신청
             </a>
          </td>
       </tr>
-	      <%-- <tr>
-	         <td title="${cate.c_intro}" style="font-weight:bold; font-size: 14px;">
-	                     <c:if test="${!(cate.c_level > 0) }">♬&nbsp;${cate.c_subject }
-	                     </c:if>
-	                     <c:if test="${cate.c_level > 0 }">
-	                        <img src="images/level.gif" alt="" height="5"
-	                              width="${cate.c_level*10}">
-	                        <a href="${path}/board/list.html?b_c_num=${cate.c_num}" style="color:black; font-weight: 400; font-size: 13;" > 
-	                           <img src="${path }/resources/images/c3.svg" alt="" height="13" width="13" 
-	                              style="margin-bottom: 3.5px; margin-right: 4px;"/>${cate.c_subject }
-	                        </a>
-	                     </c:if>
-	         </td>
-	      </tr> --%>
-
+	  
       <c:if test="${not empty list }">
          <c:forEach var="cate" items="${list }">
             <tr>

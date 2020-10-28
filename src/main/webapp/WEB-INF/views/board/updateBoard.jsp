@@ -5,7 +5,7 @@
 <title>Insert title here</title></head><body>
 	<c:if test="${result > 0 }">
 		<script type="text/javascript">
-			alert("수정되었습니다.");
+			alert("수정 되었습니다.");
 			location.href = "boardView.html?b_c_num=${cate.c_num}&b_num=${board.b_num}&pageNum=${pageNum}";
 		</script>
 	</c:if>

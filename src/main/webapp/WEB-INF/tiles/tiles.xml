@@ -1,7 +1,9 @@
 <!DOCTYPE tiles-definitions PUBLIC
 "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
 "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
 <tiles-definitions>
+	
 	<definition name="tilesbase"
 		template="/WEB-INF/views/home_yj.jsp">
 		<put-attribute name="title" value="" />
@@ -17,71 +19,59 @@
 	
 	
 	<definition name="main" extends="tilesbase">
-		<put-attribute name="title" value="첫 화면 입니다" />
+		<put-attribute name="title" value="꿀카페 :: HOME" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/main/mainBody.jsp" />
 	</definition>
-<!--  	<definition name="/reply/replyView" extends="tilesbase">
-		<put-attribute name="body"
-			value="/WEB-INF/views/reply/replyView.jsp" />
-	</definition> -->
+
 	<definition name="/board/guestBookView" extends="tilesbase">
-		<put-attribute name="title" value="시험용ㅎㅎ 게스트북 페이지 입뉘다" />
+		<put-attribute name="title" value="" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/board/guestBookView.jsp" />
 	</definition>
+	
 	<definition name="/cate/cateList" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
+		<put-attribute name="title" value="꿀카페 :: 카테고리 관리 목록" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/cate/cateList.jsp" />
 	</definition>
-<!-- 	<definition name="/cate/insertCateForm" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
-		<put-attribute name="body"
-			value="/WEB-INF/views/cate/insertCateForm.jsp" />
-	</definition> -->	
-<!--  	<definition name="/cate/cBoard" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
-		<put-attribute name="body"
-			value="/WEB-INF/views/cate/cBoard.jsp" />
-	</definition> -->		
-<!-- 	<definition name="/cate/updateForm" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
-		<put-attribute name="body"
-			value="/WEB-INF/views/cate/updateForm.jsp" />
-	</definition>	 -->	
+
 	<definition name="/cate/updateForm" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
+		<put-attribute name="title" value="꿀카페 :: 카테고리 수정하기" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/cate/updateForm.jsp" />
 	</definition>			
+	
 	<definition name="/board/list" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
+		<put-attribute name="title" value="꿀카페 :: 게시글 목록" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/board/list.jsp" />
 	</definition>
+	
 	<definition name="/board/insertBoardForm" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
+		<put-attribute name="title" value="꿀카페 :: 게시글 입력하기" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/board/insertBoardForm.jsp" />
 	</definition>
+	
 	<definition name="/board/updateBoardForm" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
+		<put-attribute name="title" value="꿀카페 :: 게시글 수정하기" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/board/updateBoardForm.jsp" />
 	</definition>
+	
 	<definition name="/board/boardView" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
+		<put-attribute name="title" value="꿀카페 :: 게시글 상세보기" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/board/boardView.jsp" />
 	</definition>			
+	
 	<definition name="/board/listWithPhoto" extends="tilesbase">
-		<put-attribute name="title" value="test : 게시판 페이지 입뉘다" />
+		<put-attribute name="title" value="꿀카페 :: 앨범형 게시판" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/board/listWithPhoto.jsp" />
 	</definition>
 
-	
 </tiles-definitions>
 
 

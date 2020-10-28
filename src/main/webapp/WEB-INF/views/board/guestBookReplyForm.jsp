@@ -25,7 +25,7 @@
 			<input type="submit" value="등록" style="float:left;background-color:white;outline:none;border:1px solid #c9c9c9;width:90px;height:58px;margin-left:5px;font-size:13px;font-weight:bold;color:#949494;"/>
 		</c:if>
 		<c:if test="${empty sessionScope.user_id}">
-			<textarea name="r_content" cols="92" rows="3" style="float:left;outline:none;border:1px solid #e6e6e6;resize:none;margin-left:20px;font-size:13px;" readonly="readonly" placeholder="로그인 후 이용 가능한 서비스입니다"></textarea>
+			<textarea name="r_content" cols="92" rows="3" style="float:left;outline:none;border:1px solid #e6e6e6;resize:none;margin-left:20px;font-size:13px;" readonly="readonly" placeholder="로그인 후 이용 가능한 서비스입니다."></textarea>
 			<input type="button" value="등록" style="float:left;background-color:white;outline:none;border:1px solid #c9c9c9;width:90px;height:58px;margin-left:5px;font-size:13px;font-weight:bold;color:#949494;"/>
 		</c:if>
 	</form>

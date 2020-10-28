@@ -50,13 +50,13 @@
 				<i class="fas fa-backspace" style="font-size:27px;">
 				</i></a></div></td></tr> 
 <c:if test="${empty list }">
-	<tr><td>데이터가 없습니다</td></tr>
+	<tr><td>데이터가 없습니다.</td></tr>
 </c:if>		
 <c:if test="${not empty list }">
 <c:forEach var="cat" items="${list }">
 	<tr>
 	<c:if test="${cat.c_del == 'y'}">
-		<td colspan="3" align="center">삭제된 카테고리입니다</td>
+		<td colspan="3" align="center">삭제된 카테고리 입니다.</td>
 	</c:if>
 	<c:if test="${cat.c_del != 'y'}">
 		<td align="center" width="5%">

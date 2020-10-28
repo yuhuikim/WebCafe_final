@@ -70,7 +70,7 @@
 				<tr>
 					<td><img id="bmi" src="${path}/resources/images/s1.jpg" alt="" style="cursor:pointer;padding-right:10px;padding-bottom:2px"/></td>
 					<td><p id="cinfo" style="font-size:13px;color:black;padding-top:6px;padding-right:10px;cursor:default;font-weight:bolder">카페정보</p></td>
-					<td><p id="myacti" style="font-size:13px;color:#bfbfbf;padding-top:6px;cursor:pointer;">나의활동</p></td>
+					<td><p id="myacti" style="font-size:13px;color:#bfbfbf;padding-top:6px;cursor:pointer;">나의 활동</p></td>
 				</tr>
 			</table>
 			</div>

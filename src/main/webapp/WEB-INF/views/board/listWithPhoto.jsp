@@ -201,7 +201,7 @@ div.desc {
 	         </c:forTokens>              
 	      </select>
 	      
-	      <input class="btn btn-default" type="text" placeholder="검색어를 입력하세요" name="keyword" value="${board.keyword }"/>
+	      <input class="btn btn-default" type="text" placeholder="검색어를 입력하세요." name="keyword" value="${board.keyword }"/>
 	      <!-- <input class="btn btn-info" type="submit" value="확인" /> -->
 	      <button class="btn btn-default btn-lg" type="submit">
 	        <i class="glyphicon glyphicon-search"></i>

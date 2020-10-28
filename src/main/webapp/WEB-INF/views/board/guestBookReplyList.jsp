@@ -34,7 +34,7 @@
 							<p id="gbrKey_${gbrl.r_num }" style="float:left;font-size:9px;color:#737373;cursor:pointer;margin-left:5px;font-weight:bolder;line-height:10%;" onclick="gbReplKey(${gbrl.r_num},${gbrl.r_level})">┕답글</p>
 						</c:if>
 						<c:if test="${gbrl.r_level-1>=8}">							
-							<p style="float:left;font-size:9px;color:#8f8f8f;margin-left:5px;font-weight:bolder;line-height:30%;">더 댓글을 달 수 없는 댓글입니다.</p>
+							<p style="float:left;font-size:9px;color:#8f8f8f;margin-left:5px;font-weight:bolder;line-height:30%;">대댓글을 달 수 없는 댓글 입니다.</p>
 						</c:if>
 						
 						<c:if test="${sessionScope.user_id == gbrl.r_id}">

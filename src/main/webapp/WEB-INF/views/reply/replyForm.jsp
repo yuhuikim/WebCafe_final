@@ -32,10 +32,10 @@
 				<tr>
 					<td>
 						<c:if test="${not empty sessionScope.user_id}">
-							<textarea style="float:left;border:none;outline:none;width:720px;font-size:12px;resize:none;" name="r_content" cols="90" rows="3" placeholder="댓글을 남겨보세요" required="required"></textarea>
+							<textarea style="float:left;border:none;outline:none;width:720px;font-size:12px;resize:none;" name="r_content" cols="90" rows="3" placeholder="댓글을 남겨보세요." required="required"></textarea>
 						</c:if>
 						<c:if test="${empty sessionScope.user_id}">
-							<textarea style="float:left;border:none;outline:none;width:720px;font-size:12px;resize:none;" name="r_content" cols="90" rows="3" placeholder="로그인 후 이용 가능한 서비스입니다" readonly="readonly"></textarea>
+							<textarea style="float:left;border:none;outline:none;width:720px;font-size:12px;resize:none;" name="r_content" cols="90" rows="3" placeholder="로그인 후 이용 가능한 서비스입니다." readonly="readonly"></textarea>
 						</c:if>
 					
 					</td>

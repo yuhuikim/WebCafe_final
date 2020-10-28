@@ -191,7 +191,7 @@ table {
             </c:if>
          </c:forTokens>              
       </select>
-      <input class="btn btn-default" type="text" placeholder="검색어를 입력하세요" name="keyword" value="${board.keyword }"/>
+      <input class="btn btn-default" type="text" placeholder="검색어를 입력하세요." name="keyword" value="${board.keyword }"/>
       <%-- <input type="text" name="keyword" value="${board.keyword }"/> --%>
       <button class="btn btn-default btn-lg" type="submit">
 	  	<i class="glyphicon glyphicon-search"></i>

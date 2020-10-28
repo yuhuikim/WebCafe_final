@@ -18,7 +18,7 @@
 
 <c:if test="${result > 0}">
 	<script type="text/javascript">
-		alert("삭제 되었습니다");
+		alert("삭제 되었습니다.");
 		location.href="list.html?b_c_num=${cate.c_num }";
 	</script>
 </c:if>

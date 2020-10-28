@@ -33,7 +33,7 @@
 	});
 	
    function delchk() {
-      result = confirm("삭제하시겠습니까?");
+      result = confirm("삭제 하시겠습니까?");
       if (result == true) {
          location.href = "deleteBoard.html?b_c_num=${cate.c_num}&b_num=${board.b_num}&pageNum=${pageNum}";
       } else

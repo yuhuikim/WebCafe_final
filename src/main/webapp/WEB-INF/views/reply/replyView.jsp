@@ -13,8 +13,8 @@
 		$('#replyFormDisp').load('/replyForm.html?r_b_num='+r_b_num+'&r_ref=0');
 	});
  	function rDelete(r_b_num, r_num){
-		  if(confirm("정말 삭제하시겠습니까 ?") == true){
-		        alert("삭제되었습니다");
+		  if(confirm("정말 삭제하시겠습니까?") == true){
+		        alert("삭제 되었습니다.");
 		        $(location).attr('href', '/deleteReply.html?r_b_num='+r_b_num+'&r_num='+r_num); 
 /* 		        window.history.back(); */
 		    }
@@ -43,7 +43,7 @@
 		);
 	}
  	function up(r_b_num, r_num){
- 		alert("수정되었습니다");
+ 		alert("수정 되었습니다.");
       	$(location).attr('href', '/udpateReply.html?r_content='+$('#rCont2_'+r_num).val()+'&r_b_num='+r_b_num+'&r_num='+r_num);
 /*   	window.history.back(); */
 	}
@@ -136,7 +136,7 @@
 									<p id="rKey_${rl.r_num }" style="float:left;font-size:10px;color:#979797;cursor:pointer;margin-bottom:0px;" onclick="replKey(${rl.r_num},${rl.r_level})">답글쓰기</p>
 								</c:if>
 								<c:if test="${rl.r_level>=10}">							
-									<p style="float:left;font-size:5px;color:#979797;margin-bottom:0px;">더 댓글을 달 수 없는 댓글입니다.</p>
+									<p style="float:left;font-size:5px;color:#979797;margin-bottom:0px;">대댓글을 달 수 없는 댓글입니다.</p>
 								</c:if>
 								</p>
 							</td>
